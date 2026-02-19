@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000; /* or match your Figma background color */
+  overflow: hidden; /* prevents scrollbars around the iframe */
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  display: block;
+}
