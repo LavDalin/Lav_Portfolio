@@ -1119,7 +1119,7 @@
         {
           title: 'Overview',
           open: true,
-          content: `<b>Research Question:</b> Can directional vibrotactile patterns on smartphone backs enable eyes-free navigation and private input for visually impaired users?<br/><br/>
+          content: `<img src="Images/P01.1 - Proj_1_thumnail.jpg" alt="Project Overview" style="width:100%;border-radius:10px;margin-bottom:20px;object-fit:cover;max-height:340px;"/><b>Research Question:</b> Can directional vibrotactile patterns on smartphone backs enable eyes-free navigation and private input for visually impaired users?<br/><br/>
           <b>What this project addresses:</b><br/>
           • Visually impaired users rely heavily on audio feedback (screen readers), which lacks privacy and excludes silent environments<br/>
           • Existing haptic interfaces are limited to simple alerts — not directional or spatial guidance<br/>
@@ -1140,11 +1140,14 @@
           • <b>Arduino Nano ESP32</b> microcontroller — enables independent PWM control of 6 vibration motors<br/>
           • <b>6 vibration motors</b> strategically placed at the four corners and two mid-points of the smartphone back<br/>
           • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/><img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/></div>
+          <div style="display:flex;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);flex:1;text-align:center;">Hardware Setup</span><span style="font-size:11px;color:var(--muted);flex:1;text-align:center;">Motor Placement</span></div>
           <b>Motor placement design rationale:</b><br/>
           • Maximizes spatial differentiation between tactile zones<br/>
           • Ensures comprehensive device coverage<br/>
           • Validated by prior tactile perception research<br/><br/>
           <b>Background & Literature Survey:</b><br/>
+          <img src="Images/P01.2 - LiteratureSurvey.jpg" alt="Literature Survey" style="width:100%;border-radius:8px;margin:12px 0;object-fit:cover;max-height:260px;"/><br/>
           • Synthesized haptic research to establish design criteria for tactile perception and directional guidance<br/>
           • Ensured all haptic patterns remained within effective yet comfortable ranges for user interpretation`
         },
@@ -1155,6 +1158,8 @@
           • Android app handled live camera streaming (MJPEG format), audio feedback via Text-to-Speech, and automatic CSV logging of tasks<br/>
           • Arduino ESP32 hosted a <b>browser-based controller</b> to send directional commands and adjust vibration intensity (0–255)<br/>
           • PWM signals used for precise, software-configurable haptic control<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;object-fit:cover;height:180px;"/><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;object-fit:cover;height:180px;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;object-fit:cover;height:180px;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Web Controller</span><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
           <b>Why Wizard-of-Oz?</b><br/>
           • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
           • A researcher operated the web controller in real time while participants completed navigation tasks`
@@ -1163,6 +1168,7 @@
           title: 'Target Audience Validation',
           content: `<b>COVE Vision Fair 2025 — Real-World Contextual Testing</b><br/><br/>
           Before formal lab studies, I demonstrated and tested the haptic prototype with the actual target audience at the <b>COVE Vision Fair 2025</b> — an event attended by individuals ranging from low vision to complete blindness, along with their families and support staff.<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.7 - CoveFair.jpeg" alt="COVE Vision Fair" style="width:100%;border-radius:8px;object-fit:cover;height:220px;"/><img src="Images/P01.8 - CoveFair.jpeg" alt="COVE Vision Fair Demo" style="width:100%;border-radius:8px;object-fit:cover;height:220px;"/></div>
           <b>What I did:</b><br/>
           • Conducted live demonstrations of the vibrotactile navigation system with visually impaired attendees<br/>
           • Gathered firsthand qualitative feedback on how directional haptics can address real accessibility gaps<br/>
@@ -1180,15 +1186,19 @@
           • Within-subjects design: <b>2,052 trials</b> across 3 prototypes, 3 grip postures, 4 directions<br/>
           • Latin square randomization to control order effects; feedback withheld during testing<br/>
           • Measured: success rate, task duration, Single Ease Questionnaire (SEQ), System Usability Scale (SUS), NASA-TLX<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.10 - UserStudySetup.jpg" alt="User Study Setup" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/><img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant User Study 1" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/></div>
           <b>Results:</b><br/>
           • <b>Cylindrical motor</b> achieved the highest overall success rate: <b>66.67%</b><br/>
           • Cylindrical outperformed others across all hand conditions (62.72–73.68%) and most directions, including leftward tasks (73.10%)<br/>
           • Flat motor excelled only in upward movements (73.10%) but struggled with lateral directions (40.94–45.03%)<br/>
           • Cuboid maintained moderate performance (64.91%) across all conditions<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;height:180px;"/><img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;height:180px;"/><img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;height:180px;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Motor Success</span><span style="font-size:11px;color:var(--muted);text-align:center;">Grip Success</span><span style="font-size:11px;color:var(--muted);text-align:center;">Directional Success</span></div>
           <b>Qualitative Ratings (1–5 scale):</b><br/>
           • Cylindrical scored highest overall (4.1–4.5), especially in "Comfortable to Use" (4.5) and "Overall Preference" (4.2)<br/>
           • Flat motor performed well (4.0–4.3); Cuboid scored lowest on "Clarity of Feedback" (3.3) and "Overall Preference" (3.4)<br/>
-          • Think-aloud protocol revealed distinct mental models — users instinctively mapped vibration location to directional intent`
+          • Think-aloud protocol revealed distinct mental models — users instinctively mapped vibration location to directional intent<br/><br/>
+          <img src="Images/P01.15 - QualitativeResult.png" alt="Qualitative Results" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;margin-top:8px;"/>`
         },
         {
           title: 'User Study 2 — Feedback Modality (Wizard of Oz)',
@@ -1197,11 +1207,14 @@
           • Researcher remotely triggered directional guidance using a custom <b>web-based controller + mobile app</b><br/>
           • Three feedback conditions tested: <b>Haptic only</b>, <b>Audio only</b>, <b>No feedback</b><br/>
           • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/><img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;height:200px;"/></div>
           <b>Results:</b><br/>
           • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
           • <b>Haptic</b> feedback was slower — mean duration: <b>45,267 ms</b> — but provided directional precision audio could not<br/>
           • Shapiro-Wilk test confirmed non-normal distribution (p &lt; 0.001)<br/>
           • Friedman + Nemenyi post-hoc tests confirmed haptic was significantly slower than no-feedback condition (p = .004)<br/><br/>
+          <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;margin:12px 0;"/><br/>
           <b>Key insight:</b> Haptic was slower but uniquely enabled <b>silent, private navigation</b> — a trade-off users considered worthwhile for accessibility contexts where audio is impractical`
         },
         {
@@ -1211,11 +1224,13 @@
           • Tested <b>5 distinct haptic patterns</b>: Pulse, Patterned Buzz, Rapid Buzz, Wave, Heartbeat<br/>
           • Preferred intensity measured at <b>210–255 PWM</b> for optimal directional accuracy<br/>
           • Qualitative ratings on a 1–5 scale (1 = most preferred, 5 = least preferred) across Extended Use, Ease of Use, Comfort, and Overall Preference<br/><br/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.21 - Participant1_UserStudy3.jpeg" alt="Participant 1 Study 3" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/><img src="Images/P01.22_Participant2_UserStudy3.jpeg" alt="Participant 2 Study 3" style="width:100%;border-radius:8px;object-fit:cover;height:200px;"/></div>
           <b>Results:</b><br/>
           • <b>Wave pattern performed best</b> across all metrics (1.46–1.71) — rated most intuitive and comfortable<br/>
           • Patterned Buzz ranked second (2.00–2.21)<br/>
           • Heartbeat was mid-range (2.39–2.71)<br/>
           • Rapid Buzz scored lower (3.14–3.50); Pulse scored lowest overall (3.00–3.75)<br/><br/>
+          <img src="Images/P01.23_Qual_UserStudy3.png" alt="Qualitative Results Study 3" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;margin:12px 0;"/><br/>
           <b>Conclusion:</b> The Wave pattern's smooth, flowing vibration most naturally conveyed directional movement — establishing it as the benchmark haptic language for the navigation system`
         },
         {
