@@ -1,185 +1,1487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lavanya Dalin Annappa - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600&family=Roboto:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lavanya Dalin Annappa — UX Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #faf7f2;
+    --warm-white: #f5f0e8;
+    --ink: #1a1208;
+    --charcoal: #2d2416;
+    --rust: #c8421a;
+    --rust-light: #e85d2a;
+    --gold: #c9a227;
+    --muted: #7a6e5f;
+    --border: #e0d5c5;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 20px rgba(26,18,8,0.08);
+    --shadow-hover: 0 8px 40px rgba(104, 65, 18, 0.15);
+    /* accent palette */
+    --teal: #2a7c74;
+    --teal-light: #e6f4f3;
+    --teal-border: #a8d5d1;
+    --gold-dark: #a07c10;
+    --gold-light: #fdf4dc;
+    --gold-border: #e8d08a;
+    --sage: #4a7c59;
+    --sage-light: #edf5ef;
+    --sage-border: #aacfb5;
+    --plum: #7c3a6b;
+    --plum-light: #f7eef5;
+    --plum-border: #d4a8cb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--ink);
+    padding: 0 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #2d2416;
+    height: 52px;
+  }
+
+  .nav-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: var(--rust);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-brand span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7a6e5f;
+    margin-left: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links { display: flex; gap: 2px; }
+
+  .nav-link {
+    color: #b0a898;
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ─── HERO ─── */
+  #home {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .floral { display: none; }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px;
+    padding: 56px 48px;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+
+  .hero-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .hero-uni {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  /* Bio card */
+  .hero-bio-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    width: 100%;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bio-dot { display: none; }
+
+  .bio-text {
+    font-size: 14px;
+    color: var(--charcoal);
+    line-height: 1.75;
+    text-align: justify;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .bio-text p { margin-bottom: 0; }
+  .bio-text strong { font-weight: 600; color: var(--ink); }
+
+  /* Right column */
+  .hero-right { display: flex; flex-direction: column; gap: 20px; }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 8px;
+    border: 3px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    width: 100%;
+    flex: 1;
+  }
+
+  .contact-card h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .contact-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-item:hover { color: var(--rust); }
+
+  .contact-icon-wrap {
+    width: 28px; height: 28px;
+    background: var(--rust);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+  }
+
+  .contact-icon-wrap svg { width: 15px; height: 15px; stroke: #fff; }
+
+  .contact-socials {
+    display: flex; gap: 8px; margin-top: 12px;
+  }
+
+  .social-btn {
+    width: 34px; height: 34px;
+    border-radius: 6px;
+    background: var(--rust);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .social-btn:hover { background: var(--rust-light); transform: translateY(-2px); }
+  .social-btn svg { width: 17px; height: 17px; }
+
+  /* ─── SECTION TITLE ─── */
+  .section-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px 32px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── PROJECTS GRID ─── */
+  #projects { background: var(--cream); }
+
+  .projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+  }
+
+  .card-thumb {
+    width: 100%; height: 160px;
+    background: linear-gradient(135deg, #e8dfd0, #d0c5b4);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-thumb-emoji { font-size: 48px; opacity: 0.6; }
+
+  .card-category {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .card-body { padding: 20px; }
+
+  .card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+
+  .tag {
+    font-size: 11px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .card-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rust);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  .card-btn svg { transition: transform 0.2s; }
+  .card-btn:hover svg { transform: translateX(3px); }
+
+  /* ─── LOAD MORE ─── */
+  .load-more-wrap {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .load-more-btn {
+    display: inline-block;
+    background: var(--rust);
+    color: #fff;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.2s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .load-more-btn:hover { background: var(--rust-light); transform: translateY(-1px); }
+
+  /* ─── PROJECT DETAIL PAGE ─── */
+  #projectPage {
+    display: none;
+    position: fixed; inset: 0;
+    background: var(--cream);
+    z-index: 999;
+    overflow-y: auto;
+    animation: pageSlideIn 0.35s ease;
+  }
+
+  #projectPage.open { display: block; }
+
+  @keyframes pageSlideIn {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .project-page-nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--ink);
+    padding: 0 48px;
+    height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #2d2416;
+  }
+
+  .project-page-back {
+    display: flex; align-items: center; gap: 8px;
+    color: #b0a898;
+    background: none; border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+  }
+
+  .project-page-back:hover { color: #fff; }
+  .project-page-back svg { width: 16px; height: 16px; }
+
+  .project-page-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--rust);
+  }
+
+  .project-page-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 48px 100px;
+  }
+
+  .project-page-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--rust);
+    display: block; margin-bottom: 14px;
+  }
+
+  .project-page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+  }
+
+  .project-page-body { font-size: 14px; color: var(--charcoal); line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .project-page-nav { padding: 0 20px; }
+    .project-page-inner { padding: 36px 24px 80px; }
+  }
+
+  /* ─── COLLAPSIBLE ─── */
+  .collapsible {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .collapsible.open {
+    box-shadow: 0 4px 24px rgba(200,66,26,0.07);
+    border-color: #d9c9b8;
+  }
+
+  .collapsible-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px;
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+    gap: 12px;
+  }
+
+  .collapsible-header:hover { background: var(--warm-white); }
+
+  .collapsible.open .collapsible-header {
+    background: linear-gradient(90deg, #fff8f5 0%, var(--card-bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .collapsible-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--rust);
+    letter-spacing: 0.01em;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .collapsible-arrow {
+    color: var(--rust);
+    font-size: 20px;
+    transition: transform 0.3s;
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .collapsible.open .collapsible-arrow { transform: rotate(180deg); opacity: 1; }
+
+  .collapsible-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.45s ease, padding 0.3s;
+    background: #fff;
+    font-size: 14px; color: var(--charcoal); line-height: 1.85;
+  }
+
+  .collapsible.open .collapsible-body {
+    max-height: 2000px;
+    padding: 28px 28px 28px 36px;
+  }
+
+  /* Rich content styles inside collapsible body */
+  .collapsible-body b {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* Bullet point lines get styled */
+  .collapsible-body br + • { margin-top: 6px; }
+
+  /* Style paragraphs of text */
+  .collapsible-body p {
+    margin-bottom: 14px;
+  }
+
+  /* Left accent bar for sub-headings (bold lines that start sections) */
+  .collapsible-body .section-block {
+    border-left: 3px solid var(--rust);
+    padding-left: 14px;
+    margin: 20px 0 10px;
+  }
+
+  /* Inline metric/stat callout chips */
+  .stat-chip {
+    display: inline-block;
+    background: #fff3ee;
+    border: 1px solid #f0c4b0;
+    color: var(--rust);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin: 0 2px;
+  }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { background: var(--warm-white); border-top: 1px solid var(--border); }
+
+  .exp-list {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+    display: flex; flex-direction: column; gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+    align-items: start;
+    position: relative;
+  }
+
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: 160px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .exp-logo-col {
+    padding-right: 40px;
+    display: flex; flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 4px;
+  }
+
+  .exp-logo-img {
+    max-width: 120px;
+    max-height: 70px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .exp-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--rust);
+    position: absolute;
+    left: 155px;
+    top: 56px;
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--rust);
+  }
+
+  .exp-content { padding-left: 40px; }
+
+  .exp-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: var(--rust);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .exp-role a { color: var(--rust); }
+
+  .exp-company-line {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .exp-company-line strong { color: var(--charcoal); font-weight: 600; }
+
+  .exp-bullets {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .exp-bullets li {
+    font-size: 13.5px;
+    color: var(--charcoal);
+    line-height: 1.65;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '·';
+    position: absolute; left: 0;
+    color: var(--rust);
+    font-size: 18px; line-height: 1.3;
+  }
+
+  .exp-bullets li strong { font-weight: 600; color: var(--ink); }
+
+  .exp-skills-block {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 4px;
+  }
+
+  .exp-skills-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+
+  .exp-skill-row {
+    font-size: 12px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 2px;
+  }
+
+  .exp-skill-row strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  @media (max-width: 700px) {
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-item::before { display: none; }
+    .exp-dot { display: none; }
+    .exp-logo-col { padding-right: 0; padding-bottom: 20px; }
+    .exp-content { padding-left: 0; }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: #b0a898;
+    text-align: center;
+    padding: 40px 48px;
+    font-size: 13px;
+  }
+
+  footer a { color: var(--rust); text-decoration: none; }
+  footer a:hover { color: var(--rust-light); }
+  footer strong { color: #fff; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-right { flex-direction: row; flex-wrap: wrap; }
+    .hero-photo { max-width: 200px; }
+    nav { padding: 0 20px; }
+    .nav-brand span { display: none; }
+    .section-header, .projects-grid, .exp-list { padding-left: 24px; padding-right: 24px; }
+    .hero-inner { padding: 40px 24px; }
+    .modal { padding: 32px 24px; }
+  }
+
+  @media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Fade-in animation for cards */
+  .project-card, .exp-item {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: cardIn 0.5s ease forwards;
+  }
+
+  @keyframes cardIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .project-card:nth-child(1) { animation-delay: 0.05s; }
+  .project-card:nth-child(2) { animation-delay: 0.12s; }
+  .project-card:nth-child(3) { animation-delay: 0.19s; }
+  .project-card:nth-child(4) { animation-delay: 0.26s; }
+  .project-card:nth-child(5) { animation-delay: 0.33s; }
+  .project-card:nth-child(6) { animation-delay: 0.40s; }
+
+  .exp-item:nth-child(1) { animation-delay: 0.05s; }
+  .exp-item:nth-child(2) { animation-delay: 0.12s; }
+  .exp-item:nth-child(3) { animation-delay: 0.19s; }
+  .exp-item:nth-child(4) { animation-delay: 0.26s; }
+
+  /* Hidden projects */
+  .project-card.hidden { display: none; }
+</style>
 </head>
 <body>
-  <main class="page">
-    <section class="section section-home" id="home">
-      <!-- 1. Header - Figma: HomePage_Header first visually -->
-      <header class="header">
-        <div class="header-flower header-flower-left" aria-hidden="true"></div>
-        <a href="#home" class="header-brand">LAVANYA DALIN ANNAPPA/ PORTFOLIO HOMEPAGE</a>
-        <nav class="header-nav">
-          <a href="#projects">PROJECTS</a>
-          <a href="#experience">EXPERIENCE</a>
-          <a href="#resume">RESUME</a>
-        </nav>
-        <div class="header-flower header-flower-right" aria-hidden="true"></div>
-      </header>
 
-      <!-- 2. Hero - Figma order: SLOGAN/INTRO, PORTRAIT, ABOUT, CONTACT -->
-      <div class="hero">
-        <div class="intro-card">
-          <div class="intro-flower intro-flower-left" aria-hidden="true"></div>
-          <h1 class="intro-name">Lavanya Dalin Annappa</h1>
-          <p class="intro-subtitle">UX Researcher/Human Factors Engineer<br />University of California, Merced</p>
-          <div class="intro-flower intro-flower-right" aria-hidden="true"></div>
-          <div class="intro-vector" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-brand">Lavanya Dalin Annappa<span>/ Portfolio Homepage</span></a>
+  <div class="nav-links">
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#" class="nav-link">Resume</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <!-- Floral decorations -->
+  <svg class="floral floral-tl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="28" rx="7" ry="16" fill="#e8a898" opacity="0.7"/>
+    <ellipse cx="50" cy="72" rx="7" ry="16" fill="#e8a898" opacity="0.7"/>
+    <ellipse cx="28" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.7"/>
+    <ellipse cx="72" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.7"/>
+    <ellipse cx="34" cy="34" rx="7" ry="16" transform="rotate(45 34 34)" fill="#e8a898" opacity="0.5"/>
+    <ellipse cx="66" cy="66" rx="7" ry="16" transform="rotate(45 66 66)" fill="#e8a898" opacity="0.5"/>
+    <ellipse cx="66" cy="34" rx="7" ry="16" transform="rotate(-45 66 34)" fill="#e8a898" opacity="0.5"/>
+    <ellipse cx="34" cy="66" rx="7" ry="16" transform="rotate(-45 34 66)" fill="#e8a898" opacity="0.5"/>
+    <circle cx="50" cy="50" r="7" fill="#c8806a" opacity="0.6"/>
+  </svg>
+  <svg class="floral floral-tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="28" rx="7" ry="16" fill="#e8a898" opacity="0.65"/>
+    <ellipse cx="50" cy="72" rx="7" ry="16" fill="#e8a898" opacity="0.65"/>
+    <ellipse cx="28" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.65"/>
+    <ellipse cx="72" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.65"/>
+    <circle cx="50" cy="50" r="7" fill="#c8806a" opacity="0.55"/>
+  </svg>
+  <svg class="floral floral-bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="28" rx="7" ry="16" fill="#e8a898" opacity="0.55"/>
+    <ellipse cx="50" cy="72" rx="7" ry="16" fill="#e8a898" opacity="0.55"/>
+    <ellipse cx="28" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.55"/>
+    <ellipse cx="72" cy="50" rx="16" ry="7" fill="#e8a898" opacity="0.55"/>
+    <circle cx="50" cy="50" r="7" fill="#c8806a" opacity="0.45"/>
+  </svg>
+
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-left">
+      <h1 class="hero-name">Lavanya Dalin Annappa</h1>
+      <p class="hero-title">UX Researcher/Human Factors Engineer</p>
+      <p class="hero-uni">University of California, Merced</p>
+      <div class="hero-bio-card">
+        <div class="bio-dot">
+          <svg viewBox="0 0 20 20" width="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="3" fill="#c8806a"/>
+            <circle cx="10" cy="2" r="2" fill="#c8806a" opacity="0.5"/>
+            <circle cx="10" cy="18" r="2" fill="#c8806a" opacity="0.5"/>
+            <circle cx="2" cy="10" r="2" fill="#c8806a" opacity="0.5"/>
+            <circle cx="18" cy="10" r="2" fill="#c8806a" opacity="0.5"/>
+          </svg>
         </div>
-
-        <div class="portrait-wrap">
-          <img src="./assets/portrait.png" alt="Lavanya Dalin Annappa" class="portrait-img" loading="eager" />
-        </div>
-
-        <div class="about-card">
-          <div class="about-icon" aria-hidden="true"></div>
-          <p class="about-text">
-            I am a Master's student in Computer Engineering at UC Merced, researching human-computer interaction and assistive technology in the Inclusive Interaction Lab. I specialize in developing haptic feedback systems for accessible navigation.<br /><br />
-            My work bridges user research, interaction design, and technology development to create inclusive solutions. I am a mixed methods researcher conducting usability studies, build prototypes, and apply machine learning to enhance user experiences, all focused on developing technology that meaningfully improves people's lives.<br /><br />
-            My research interests center on Human Factors, UX Research, Accessibility, and Intelligent Systems.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h2 class="contact-title">Contact Info</h2>
-          <p class="contact-email">ldalinannappa@ucmerced.edu</p>
-          <p class="contact-phone">+1 209-291-4393</p>
-          <div class="contact-icons">
-            <a href="mailto:ldalinannappa@ucmerced.edu" class="contact-icon" aria-label="Email">
-              <img src="./assets/gmail.png" alt="" width="48" height="48" />
-            </a>
-            <a href="https://www.linkedin.com/in/lavanya-dalin-annappa" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="LinkedIn">
-              <img src="./assets/linkedin.png" alt="" width="48" height="48" />
-            </a>
-            <a href="https://github.com/ldalinannappa" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="GitHub">
-              <img src="./assets/github.png" alt="" width="48" height="48" />
-            </a>
-          </div>
-          <div class="contact-phone-icon" aria-hidden="true"></div>
+        <div class="bio-text">
+          <p>I am a Master's student in Computer Engineering at UC Merced, researching <strong>human-computer interaction</strong> and assistive technology in the Inclusive Interaction Lab. I specialize in developing haptic feedback systems for accessible navigation.</p>
+          <p>My work bridges <strong>user research</strong>, <strong>interaction design</strong>, and technology development to create inclusive solutions. I am a <strong>mixed methods researcher</strong> conducting <strong>usability studies, build prototypes</strong>, and apply machine learning to enhance <strong>user experiences</strong>, all focused on developing technology that meaningfully improves people's lives.</p>
+          <p>My research interests center on <strong>Human Factors, UX Research, Accessibility, and Intelligent Systems</strong>.</p>
         </div>
       </div>
+    </div>
 
-      <!-- 3. Projects header - Figma: Project_Header -->
-      <div class="projects-header" id="projects">
-        <div class="projects-header-flower projects-header-flower-left" aria-hidden="true"></div>
-        <h2 class="projects-header-title">PROJECTS</h2>
-        <div class="projects-header-flower projects-header-flower-mid" aria-hidden="true"></div>
-        <div class="projects-header-flower projects-header-flower-right" aria-hidden="true"></div>
-      </div>
-
-      <!-- 4. Projects grid - Figma: Group 29 (project titles link to prototype sections) -->
-      <div class="projects-grid">
-        <div class="project-card project-card-1">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#haptic-project" class="project-title-link">TactileAlign: An Assistive HCI System for Visually Impaired Camera Alignment</a></h3>
-          <p class="project-desc">A haptic system that guides visually impaired users to align mobile cameras using real-time haptic feedback through vibration motors.</p>
-        </div>
-        <div class="project-card project-card-2">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#madhubani-project" class="project-title-link">Madhubani AI: Cultural Heritage Preservation via PEFT</a></h3>
-          <p class="project-desc">Fine-tuning generative models to synthesize 2,500-year-old traditional Indian art, achieving authentic geometric precision where base models fail.</p>
-        </div>
-        <div class="project-card project-card-3">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#llm-project" class="project-title-link">Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment</a></h3>
-          <p class="project-desc">An intelligent AI agent that reduces product research time by 95%, transforming complex ingredient lists into clear, fact-checked health insights in under 5 seconds.</p>
-        </div>
-        <div class="project-card project-card-4">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#project-teachu" class="project-title-link">TeachU: AI Learning Platform</a></h3>
-          <p class="project-desc">An AI-powered platform that transforms static PDFs into animated educational videos in under a minute, presented at the 2024 TED AI Hackathon.</p>
-        </div>
-        <div class="project-card project-card-5">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#project-echofilter" class="project-title-link">EchoFilter: Precision Spectrogram Optimization for Bird Calls</a></h3>
-          <p class="project-desc">A dual-stage framework that isolates bird calls from environmental noise by combining raw audio denoising with targeted spectrogram enhancement to preserve key biological motifs.</p>
-        </div>
-        <div class="project-card project-card-6">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#project-healthbot" class="project-title-link">Health Bot: Voice-Based Medical Assistant</a></h3>
-          <p class="project-desc">A voice-activated diagnostic assistant that uses speech-to-text interaction and contextual memory to identify health issues with 95% precision.</p>
-        </div>
-        <div class="project-card project-card-7">
-          <div class="project-socials-bar"></div>
-          <h3 class="project-title"><a href="#project-movie" class="project-title-link">Personalized Movie Recommender Systems</a></h3>
-          <p class="project-desc">Two distinct recommender systems built in R using content-based and collaborative filtering to deliver personalized movie suggestions based on genre similarity and historical user preferences.</p>
-        </div>
-        <div class="project-card project-card-more">
-          <p class="project-more-text">Loading More<br />Projects Soon....</p>
+    <!-- Right -->
+    <div class="hero-right">
+      <img src="Images/Lav_Photo.jpg" alt="Lavanya Dalin Annappa" class="hero-photo"/>
+      <div class="contact-card">
+        <h4>Contact Info</h4>
+        <a href="/cdn-cgi/l/email-protection#422e26232e2b2c232c2c233232230237212f27302127266c272637" class="contact-item">
+          <span class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </span>
+          <span class="__cf_email__" data-cfemail="6f030b0e0306010e01010e1f1f0e2f1a0c020a1d0c0a0b410a0b1a">[email&#160;protected]</span>
+        </a>
+        <a href="tel:+12092914393" class="contact-item">
+          <span class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12.5 19.79 19.79 0 0 1 1 3.87 2 2 0 0 1 2.96 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17z"/></svg>
+          </span>
+          +1 209-291-4393
+        </a>
+        <div class="contact-socials">
+          <a href="https://github.com/LavDalin?tab=repositories" target="_blank" class="social-btn" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/lavanya-dalin-annappa-b9318a1aa/" target="_blank" class="social-btn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Project detail sections (Figma prototype destinations: /Haptic-project_v2, /Madhubhani_project, /LLm_project) -->
-      <section class="section project-detail" id="haptic-project" aria-label="TactileAlign Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">TactileAlign: An Assistive HCI System for Visually Impaired Camera Alignment</h2>
-          <p class="about-text">This is the project detail section linked from the homepage (Figma: /Haptic-project_v2). Add full content from your Figma prototype here—overview, hardware development, user studies, etc.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="madhubani-project" aria-label="Madhubani AI Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">Madhubani AI: Cultural Heritage Preservation via PEFT</h2>
-          <p class="about-text">This is the project detail section (Figma: /Madhubhani_project). Add your Madhubani AI project content here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="llm-project" aria-label="Multi-modal Ingredient Analyzer Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment</h2>
-          <p class="about-text">This is the project detail section (Figma: /LLm_project). Add your LLM / Ingredient Analyzer project content here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="project-teachu" aria-label="TeachU Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">TeachU: AI Learning Platform</h2>
-          <p class="about-text">Project detail section for TeachU. Add content from your Figma prototype here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="project-echofilter" aria-label="EchoFilter Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">EchoFilter: Precision Spectrogram Optimization for Bird Calls</h2>
-          <p class="about-text">Project detail section for EchoFilter. Add content here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="project-healthbot" aria-label="Health Bot Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">Health Bot: Voice-Based Medical Assistant</h2>
-          <p class="about-text">Project detail section for Health Bot. Add content here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
-      <section class="section project-detail" id="project-movie" aria-label="Movie Recommender Project">
-        <div class="project-detail-inner">
-          <h2 class="project-detail-title">Personalized Movie Recommender Systems</h2>
-          <p class="about-text">Project detail section for Movie Recommender Systems. Add content here.</p>
-          <a href="#projects" class="project-detail-back">← Back to Projects</a>
-        </div>
-      </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-label">Selected Work</span>
+    <h2 class="section-title">Projects</h2>
+  </div>
+  <div class="projects-grid" id="projectsGrid">
 
-      <section class="section section-experience" id="experience" aria-label="Experience">
-        <div class="experience-placeholder">
-          <h2 class="projects-header-title">EXPERIENCE</h2>
-          <p class="about-text">Experience section — content from Figma /Experience page can be added here.</p>
+    <!-- Card 1 -->
+    <div class="project-card" onclick="openProject('haptic')">
+      <div class="card-thumb" style="background:#c9b89e; padding:0; overflow:hidden;">
+        <img src="haptic-thumb.jpg" alt="Young blind woman using phone" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+        <span class="card-category">HCI · Assistive Tech</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">TactileAlign: An Assistive HCI System for Visually Impaired Camera Alignment</h3>
+        <p class="card-desc">A haptic feedback system that helps visually impaired users take well-framed photographs through real-time audio and tactile guidance.</p>
+        <div class="card-tags">
+          <span class="tag">Hardware Dev</span>
+          <span class="tag">User Studies</span>
+          <span class="tag">Accessibility</span>
         </div>
-      </section>
-      <section class="section section-resume" id="resume" aria-label="Resume">
-        <div class="experience-placeholder">
-          <h2 class="projects-header-title">RESUME</h2>
-          <p class="about-text">Resume link or embed — add your PDF or link here.</p>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="project-card" onclick="openProject('madhubhani')">
+      <div class="card-thumb" style="background: linear-gradient(135deg,#f5e6d0,#e8c5a0);">
+        <span class="card-thumb-emoji">🎨</span>
+        <span class="card-category">AI · Cultural Heritage</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Madhubhani AI: Cultural Heritage Preservation via PEFT</h3>
+        <p class="card-desc">An AI system leveraging parameter-efficient fine-tuning to generate and preserve the visual language of Madhubhani folk art traditions.</p>
+        <div class="card-tags">
+          <span class="tag">PEFT</span>
+          <span class="tag">Diffusion Models</span>
+          <span class="tag">Visual AI</span>
         </div>
-      </section>
-    </section>
-  </main>
-</body>
-</html>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="project-card" onclick="openProject('llm')">
+      <div class="card-thumb" style="background: linear-gradient(135deg,#dde8f0,#b8d0e0);">
+        <span class="card-thumb-emoji">🧠</span>
+        <span class="card-category">AI · NLP</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Multi-modal Ingredient Analyser: AI-Driven Consumer Empowerment</h3>
+        <p class="card-desc">A multimodal AI tool that analyzes product ingredient lists via image and text to provide accessible health insights for consumers.</p>
+        <div class="card-tags">
+          <span class="tag">LLM</span>
+          <span class="tag">Multimodal</span>
+          <span class="tag">Health Tech</span>
+        </div>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 4 (hidden initially) -->
+    <div class="project-card hidden" onclick="openProject('transit')">
+      <div class="card-thumb" style="background: linear-gradient(135deg,#e8e0f0,#c8b8e0);">
+        <span class="card-thumb-emoji">🚦</span>
+        <span class="card-category">UX · Accessibility</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Torch Optimizer: Traffic Signal Optimization for BVI Traffic</h3>
+        <p class="card-desc">A smart traffic signal system designed to improve pedestrian safety for blind and visually impaired users through adaptive timing and audio cues.</p>
+        <div class="card-tags">
+          <span class="tag">IoT</span>
+          <span class="tag">Accessibility</span>
+          <span class="tag">Smart City</span>
+        </div>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 5 (hidden) -->
+    <div class="project-card hidden" onclick="openProject('health')">
+      <div class="card-thumb" style="background: linear-gradient(135deg,#e0f0e8,#b8e0c8);">
+        <span class="card-thumb-emoji">🏥</span>
+        <span class="card-category">Health · UX</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Health & Your Brand: Patient-Centered Digital Health Design</h3>
+        <p class="card-desc">A comprehensive UX study and redesign of patient-facing health platforms, focusing on trust, clarity, and accessible health information.</p>
+        <div class="card-tags">
+          <span class="tag">User Research</span>
+          <span class="tag">Healthcare UX</span>
+          <span class="tag">Prototyping</span>
+        </div>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 6 (hidden) -->
+    <div class="project-card hidden" onclick="openProject('spectro')">
+      <div class="card-thumb" style="background: linear-gradient(135deg,#f0e8d8,#e0c8a0);">
+        <span class="card-thumb-emoji">📊</span>
+        <span class="card-category">ML · Spectrometry</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">FerroFlow: Raman Spectroscopy Optimisation for BIM Craft</h3>
+        <p class="card-desc">A machine learning pipeline for automated analysis of Raman spectroscopy data to support materials identification in cultural heritage artifacts.</p>
+        <div class="card-tags">
+          <span class="tag">Spectroscopy</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Materials</span>
+        </div>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+
+  <div class="load-more-wrap">
+    <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">Loading More Projects Soon...</button>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-label">Career</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
+  <div class="exp-list">
+
+    <!-- 1. IIL -->
+    <div class="exp-item">
+      <div class="exp-logo-col">
+        <img src="Images/E01-iil_logo.jpg" alt="Inclusive Interaction Lab" class="exp-logo-img"/>
+      </div>
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <div class="exp-role">Graduate Student Researcher | <a href="https://iil.ucmerced.edu" target="_blank">Inclusive Interaction Lab</a></div>
+        <div class="exp-company-line"><strong>University of California, Merced</strong> | Prof. Ahmed Arif | <em>August 2024 – Present</em></div>
+        <ul class="exp-bullets">
+          <li>Led foundational <strong>accessibility research</strong> with visually impaired users through <strong>contextual interviews</strong> and <strong>observation</strong> to identify navigation barriers and define system requirements.</li>
+          <li>Designed and engineered 6 haptic feedback patterns optimized for tactile perception, using <strong>human factors research</strong> to refine vibration intensity and directional encoding.</li>
+          <li>Developed high-fidelity <strong>"Wizard-of-Oz" prototypes</strong> by integrating custom Arduino hardware (6-motor array) with Android software for <strong>realistic usability testing</strong>.</li>
+          <li>Facilitated <strong>mixed-methods studies</strong> with 40+ participants, building custom data-logging systems to analyze error metrics and establish <strong>design standards</strong> for assistive interfaces.</li>
+        </ul>
+        <div class="exp-skills-block">
+          <div class="exp-skills-label">Technical Skills</div>
+          <div class="exp-skill-row"><strong>UX Research:</strong> Contextual Inquiry | Persona Development | Journey Mapping | Within-Subjects Study Design</div>
+          <div class="exp-skill-row"><strong>Human Factors:</strong> Haptic Interaction Design | Tactile Perception Analysis | Signal Optimization</div>
+          <div class="exp-skill-row"><strong>Data Analysis:</strong> Statistical Analysis | Quantitative Performance Metrics | Qualitative Coding</div>
+          <div class="exp-skill-row"><strong>Prototyping:</strong> Figma | Android Studio | Arduino | Physical Computing | Wizard-of-Oz Simulation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. SOAIS -->
+    <div class="exp-item">
+      <div class="exp-logo-col">
+        <img src="Images/E02-soais_logo.jpg" alt="SOAIS" class="exp-logo-img"/>
+      </div>
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <div class="exp-role">UX &amp; Usability Consultant</div>
+        <div class="exp-company-line"><strong>SOA IT Solutions Pvt Limited, Bangalore, India</strong> | <em>February 2023 – November 2023</em></div>
+        <ul class="exp-bullets">
+          <li>Conducted <strong>systematic usability evaluations</strong> (heuristics/cognitive walkthroughs) on enterprise software, documenting 25+ critical issues and increasing task completion by 35%.</li>
+          <li>Directed <strong>iterative research and prototyping</strong> using Figma, translating insights from <strong>surveys and interviews</strong> into design improvements that boosted task success by 15%.</li>
+          <li>Partnered with stakeholders to <strong>prioritize UX fixes</strong> and advocate for <strong>user-centered design (UCD)</strong> within technical project constraints.</li>
+        </ul>
+        <div class="exp-skills-block">
+          <div class="exp-skills-label">Technical Skills</div>
+          <div class="exp-skill-row"><strong>Methodologies:</strong> Heuristic Evaluation | Cognitive Walkthrough | Mixed-Methods Research | Moderated Usability Testing</div>
+          <div class="exp-skill-row"><strong>Principles:</strong> Human Factors Engineering | Nielsen's Usability Heuristics | Cognitive Load Theory | Error Prevention</div>
+          <div class="exp-skill-row"><strong>Tools &amp; Metrics:</strong> Figma | Task Success Rates | Completion Metrics | Impact Analysis</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Infosys -->
+    <div class="exp-item">
+      <div class="exp-logo-col">
+        <img src="Images/E03-Infosys_logo.png" alt="Infosys" class="exp-logo-img" style="background:#000;padding:6px 10px;border-radius:4px;"/>
+      </div>
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <div class="exp-role">Human Factors &amp; Interaction Design Engineer</div>
+        <div class="exp-company-line"><strong>Infosys Limited, Bangalore, India</strong> | <em>March 2021 – January 2023</em></div>
+        <ul class="exp-bullets">
+          <li>Led <strong>user research</strong> for global clients, conducting <strong>10+ interviews</strong>, <strong>usability testing</strong> sessions, and <strong>behavioral analysis</strong> to inform product strategy and drive UX improvements across international markets.</li>
+          <li>Created <strong>wireframes</strong> and interactive <strong>prototypes</strong> in Adobe XD to simplify complex business workflows, reducing user friction and improving satisfaction scores.</li>
+          <li>Partnered with international development and product teams to synthesize research insights into actionable recommendations that guided product decisions and feature prioritization.</li>
+          <li>Ensured design specifications met <strong>WCAG 2.1 accessibility standards</strong> and brand guidelines while maintaining design systems and component libraries for consistency.</li>
+        </ul>
+        <div class="exp-skills-block">
+          <div class="exp-skills-label">Technical Skills</div>
+          <div class="exp-skill-row"><strong>Design &amp; Prototyping:</strong> Figma | Wireframing | Interactive Prototyping | Design Systems | Component Libraries</div>
+          <div class="exp-skill-row"><strong>User Research &amp; Testing:</strong> User Interviews | Usability Testing | Surveys | Behavioral Analysis | Competitive Analysis</div>
+          <div class="exp-skill-row"><strong>Collaboration Tools:</strong> Cross-functional Team Collaboration | Design Documentation | Style Guides</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Xcelerator -->
+    <div class="exp-item">
+      <div class="exp-logo-col">
+        <img src="Images/E04-Xcelerator_logo.png" alt="Xcelerator" class="exp-logo-img"/>
+      </div>
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <div class="exp-role">Machine Learning Intern</div>
+        <div class="exp-company-line"><strong>Xcelerator, Bangalore, India</strong> | <em>June 2019 – July 2019</em></div>
+        <ul class="exp-bullets">
+          <li>Engineered <strong>content-based</strong> and <strong>collaborative filtering</strong> engines in R to provide personalized movie suggestions based on historical user data.</li>
+          <li>Directed <strong>end-to-end data processing</strong> using R and Python, performing statistical analysis and cleaning to ensure high model accuracy across ML tasks.</li>
+          <li>Applied <strong>ML algorithms</strong> to model user preferences, translating complex genre similarities and behavioral patterns into relevant product recommendations.</li>
+        </ul>
+        <div class="exp-skills-block">
+          <div class="exp-skills-label">Technical Skills</div>
+          <div class="exp-skill-row"><strong>Algorithms:</strong> Collaborative Filtering | Content-Based Filtering | Pattern Recognition</div>
+          <div class="exp-skill-row"><strong>Tools:</strong> R | Python | ML Libraries for Statistical Analysis</div>
+          <div class="exp-skill-row"><strong>Focus Areas:</strong> Behavioral Data Analysis | Personalized Systems | Predictive Modeling</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Lavanya Dalin Annappa</strong> &nbsp;·&nbsp; UX Researcher &amp; HCI Engineer</p>
+  <p style="margin-top:8px;">Built with care · <a href="/cdn-cgi/l/email-protection#117d7067707f6870517469707c617d743f727e7c"><span class="__cf_email__" data-cfemail="6b070a1d0a05120a2b0e130a061b070e45080406">[email&#160;protected]</span></a></p>
+</footer>
+
+<!-- PROJECT DETAIL PAGE -->
+<div id="projectPage">
+  <nav class="project-page-nav">
+    <button class="project-page-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back to Portfolio
+    </button>
+    <span class="project-page-brand">Lavanya Dalin Annappa</span>
+  </nav>
+  <div class="project-page-inner">
+    <span class="project-page-tag" id="pageTag"></span>
+    <h1 class="project-page-title" id="pageTitle"></h1>
+    <div class="project-page-body" id="pageBody"></div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ─── PROJECT DATA ───
+  const projects = {
+    haptic: {
+      tag: 'HCI · Assistive Technology',
+      title: 'Vibrotactile Navigation: Eyes-Free Smartphone Interaction for Visually Impaired Users',
+      sections: [
+        {
+          title: 'Overview',
+          open: true,
+          content: `<b>Research Question:</b> Can directional vibrotactile patterns on smartphone backs enable eyes-free navigation and private input for visually impaired users?<br/><br/>
+          <b>What this project addresses:</b><br/>
+          • Visually impaired users rely heavily on audio feedback (screen readers), which lacks privacy and excludes silent environments<br/>
+          • Existing haptic interfaces are limited to simple alerts — not directional or spatial guidance<br/>
+          • This research explores whether <b>spatial haptic feedback alone</b> can convey directional information without any visual or auditory cues<br/><br/>
+          <b>Impact:</b> A successful system would enable private, silent, and eyes-free smartphone interaction — a critical accessibility gap for over 250 million visually impaired people worldwide.`
+        },
+        {
+          title: 'Research Questions',
+          content: `<b>This project investigated three core questions:</b><br/><br/>
+          1. <b>Pattern Design:</b> How can vibrotactile patterns be designed to intuitively convey directional spatial information without visual or audio cues?<br/><br/>
+          2. <b>Modality Effectiveness:</b> What combination of haptic signals produces the highest directional recognition accuracy across dominant and non-dominant hands?<br/><br/>
+          3. <b>Individual Differences:</b> How do users with different degrees of visual impairment and varying hand dominance interact differently with the system — and what design accommodations does this require?`
+        },
+        {
+          title: 'Hardware Development',
+          content: `The project progressed from a bulky proof-of-concept to a compact, wearable prototype through iterative design.<br/><br/>
+          <b>Key hardware components:</b><br/>
+          • <b>Arduino Nano ESP32</b> microcontroller — enables independent PWM control of 6 vibration motors<br/>
+          • <b>6 vibration motors</b> strategically placed at the four corners and two mid-points of the smartphone back<br/>
+          • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
+          <b>Motor placement design rationale:</b><br/>
+          • Maximizes spatial differentiation between tactile zones<br/>
+          • Ensures comprehensive device coverage<br/>
+          • Validated by prior tactile perception research<br/><br/>
+          <b>Background & Literature Survey:</b><br/>
+          • Synthesized haptic research to establish design criteria for tactile perception and directional guidance<br/>
+          • Ensured all haptic patterns remained within effective yet comfortable ranges for user interpretation`
+        },
+        {
+          title: 'System Architecture',
+          content: `<b>Platform & App (Wizard-of-Oz Setup):</b><br/>
+          • Android smartphone and Arduino Nano ESP32 connected over a <b>local WiFi network</b><br/>
+          • Android app handled live camera streaming (MJPEG format), audio feedback via Text-to-Speech, and automatic CSV logging of tasks<br/>
+          • Arduino ESP32 hosted a <b>browser-based controller</b> to send directional commands and adjust vibration intensity (0–255)<br/>
+          • PWM signals used for precise, software-configurable haptic control<br/><br/>
+          <b>Why Wizard-of-Oz?</b><br/>
+          • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
+          • A researcher operated the web controller in real time while participants completed navigation tasks`
+        },
+        {
+          title: 'Target Audience Validation',
+          content: `<b>COVE Vision Fair 2025 — Real-World Contextual Testing</b><br/><br/>
+          Before formal lab studies, I demonstrated and tested the haptic prototype with the actual target audience at the <b>COVE Vision Fair 2025</b> — an event attended by individuals ranging from low vision to complete blindness, along with their families and support staff.<br/><br/>
+          <b>What I did:</b><br/>
+          • Conducted live demonstrations of the vibrotactile navigation system with visually impaired attendees<br/>
+          • Gathered firsthand qualitative feedback on how directional haptics can address real accessibility gaps<br/>
+          • Engaged with users, caregivers, and support staff to understand diverse real-world needs<br/><br/>
+          <b>Key takeaways:</b><br/>
+          • Users responded positively to the silent, private nature of haptic-only feedback<br/>
+          • Caregivers highlighted the potential for independent navigation without relying on audio cues<br/>
+          • Insights directly informed the design priorities and hypotheses for the formal user studies`
+        },
+        {
+          title: 'User Study 1 — Motor & Grip Performance',
+          content: `<b>Study Design:</b><br/>
+          • <b>N=22 participants</b>, aged 18–29 | 59% female, 77.7% right-handed<br/>
+          • Average smartphone experience: 9.8 years | All reported normal tactile sensitivity<br/>
+          • Within-subjects design: <b>2,052 trials</b> across 3 prototypes, 3 grip postures, 4 directions<br/>
+          • Latin square randomization to control order effects; feedback withheld during testing<br/>
+          • Measured: success rate, task duration, Single Ease Questionnaire (SEQ), System Usability Scale (SUS), NASA-TLX<br/><br/>
+          <b>Results:</b><br/>
+          • <b>Cylindrical motor</b> achieved the highest overall success rate: <b>66.67%</b><br/>
+          • Cylindrical outperformed others across all hand conditions (62.72–73.68%) and most directions, including leftward tasks (73.10%)<br/>
+          • Flat motor excelled only in upward movements (73.10%) but struggled with lateral directions (40.94–45.03%)<br/>
+          • Cuboid maintained moderate performance (64.91%) across all conditions<br/><br/>
+          <b>Qualitative Ratings (1–5 scale):</b><br/>
+          • Cylindrical scored highest overall (4.1–4.5), especially in "Comfortable to Use" (4.5) and "Overall Preference" (4.2)<br/>
+          • Flat motor performed well (4.0–4.3); Cuboid scored lowest on "Clarity of Feedback" (3.3) and "Overall Preference" (3.4)<br/>
+          • Think-aloud protocol revealed distinct mental models — users instinctively mapped vibration location to directional intent`
+        },
+        {
+          title: 'User Study 2 — Feedback Modality (Wizard of Oz)',
+          content: `<b>Study Design:</b><br/>
+          • <b>N=6 participants</b> tested via Wizard-of-Oz setup<br/>
+          • Researcher remotely triggered directional guidance using a custom <b>web-based controller + mobile app</b><br/>
+          • Three feedback conditions tested: <b>Haptic only</b>, <b>Audio only</b>, <b>No feedback</b><br/>
+          • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
+          <b>Results:</b><br/>
+          • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
+          • <b>Haptic</b> feedback was slower — mean duration: <b>45,267 ms</b> — but provided directional precision audio could not<br/>
+          • Shapiro-Wilk test confirmed non-normal distribution (p &lt; 0.001)<br/>
+          • Friedman + Nemenyi post-hoc tests confirmed haptic was significantly slower than no-feedback condition (p = .004)<br/><br/>
+          <b>Key insight:</b> Haptic was slower but uniquely enabled <b>silent, private navigation</b> — a trade-off users considered worthwhile for accessibility contexts where audio is impractical`
+        },
+        {
+          title: 'User Study 3 — Haptic Pattern Language',
+          content: `<b>Study Design:</b><br/>
+          • <b>N=18 participants</b> — building on Study 1 & 2 findings with cylindrical motor confirmed as the superior hardware<br/>
+          • Tested <b>5 distinct haptic patterns</b>: Pulse, Patterned Buzz, Rapid Buzz, Wave, Heartbeat<br/>
+          • Preferred intensity measured at <b>210–255 PWM</b> for optimal directional accuracy<br/>
+          • Qualitative ratings on a 1–5 scale (1 = most preferred, 5 = least preferred) across Extended Use, Ease of Use, Comfort, and Overall Preference<br/><br/>
+          <b>Results:</b><br/>
+          • <b>Wave pattern performed best</b> across all metrics (1.46–1.71) — rated most intuitive and comfortable<br/>
+          • Patterned Buzz ranked second (2.00–2.21)<br/>
+          • Heartbeat was mid-range (2.39–2.71)<br/>
+          • Rapid Buzz scored lower (3.14–3.50); Pulse scored lowest overall (3.00–3.75)<br/><br/>
+          <b>Conclusion:</b> The Wave pattern's smooth, flowing vibration most naturally conveyed directional movement — establishing it as the benchmark haptic language for the navigation system`
+        },
+        {
+          title: 'Key Findings',
+          content: `<b>Across all three studies, four major findings emerged:</b><br/><br/>
+          1. <b>Cylindrical motors win on hardware</b> — highest success rate (66.67%), best comfort ratings, and strongest directional clarity across all grip conditions<br/><br/>
+          2. <b>Haptic is slower but uniquely valuable</b> — audio is faster for raw speed, but haptic feedback enables private, silent navigation that audio cannot — a critical distinction for accessibility in public or quiet environments<br/><br/>
+          3. <b>Wave is the optimal haptic language</b> — out of 5 patterns tested, the Wave vibration was rated most intuitive, comfortable, and preferred for extended use (scores 1.46–1.71 on a 1–5 scale)<br/><br/>
+          4. <b>Users build mental models quickly</b> — think-aloud data showed participants naturally mapped vibration location and rhythm to directional intent after minimal exposure, suggesting haptic navigation is learnable without extensive training`
+        }
+      ]
+    },
+    madhubhani: {
+      tag: 'AI · Cultural Heritage Preservation',
+      title: 'Madhubhani AI: Cultural Heritage Preservation via PEFT',
+      sections: [
+        {
+          title: 'The Story',
+          open: true,
+          content: `Madhubhani painting is a centuries-old folk art tradition from the Mithila region of Bihar, India. 
+          With practitioners aging and fewer young artists continuing the tradition, this project uses AI to document, 
+          analyze, and generate authentic Madhubhani-style artwork — preserving the visual grammar of this endangered artform.`
+        },
+        {
+          title: 'What I Set Out to Do',
+          content: `The core goal was to fine-tune a generative image model to produce Madhubhani-style art that is 
+          culturally faithful, not just aesthetically similar. I used Parameter-Efficient Fine-Tuning (PEFT / LoRA) 
+          on Stable Diffusion, trained on a curated dataset of ~2,400 authenticated Madhubhani works.`
+        },
+        {
+          title: 'Model Training and Results',
+          content: `Using LoRA adapters reduced training compute by 87% vs. full fine-tuning while maintaining 
+          visual fidelity. FID score: 28.4 (vs. 61.2 baseline). Expert evaluators — including 2 practicing Madhubhani artists — 
+          rated 74% of generated images as "culturally authentic."`
+        },
+        {
+          title: 'User Study',
+          content: `Conducted participatory design sessions with 8 Madhubhani artists and 15 cultural heritage scholars. 
+          Key insights: artists valued the tool for pedagogical use, scholars saw potential for digital archives, 
+          and both groups emphasized the need for attribution frameworks when AI generates culturally-specific art.`
+        },
+        {
+          title: 'Visual Results',
+          content: `Generated images successfully reproduced hallmark features: geometric borders, natural pigment color palettes, 
+          double-line figures, and the distinctive flat perspective of traditional Madhubhani work. 
+          Failure cases clustered around complex multi-figure compositions and ceremonial scenes.`
+        }
+      ]
+    },
+    llm: {
+      tag: 'AI · NLP · Consumer Health',
+      title: 'Multi-modal Ingredient Analyser: AI-Driven Consumer Empowerment',
+      sections: [
+        {
+          title: 'The Problem Space',
+          open: true,
+          content: `Food and cosmetic product ingredient lists are notoriously difficult for consumers to parse. 
+          Chemical names, regulatory jargon, and lack of context make informed purchasing decisions hard — 
+          especially for people with allergies, dietary restrictions, or specific health goals.`
+        },
+        {
+          title: 'System Architecture',
+          content: `The system combines: (1) OCR for ingredient text extraction from product photos, 
+          (2) an LLM (Claude-based) for natural language explanation of each ingredient, 
+          (3) a nutrition/toxicology knowledge base for fact-grounding, and 
+          (4) a personalization layer that filters by user-defined health preferences.`
+        },
+        {
+          title: 'Research Questions',
+          content: `• Can LLMs accurately explain ingredients with sufficient nuance for health-conscious consumers?
+          • How do users with different health literacy levels interact with AI-generated ingredient explanations?
+          • What UI patterns best support trust-calibration in AI health information systems?`
+        },
+        {
+          title: 'Technical Model Comparison',
+          content: `Evaluated GPT-4V, Claude 3 Sonnet, and LLaVA-1.6 on a benchmark of 500 ingredient lists. 
+          Claude 3 Sonnet achieved the highest factual accuracy (91.3%) and lowest hallucination rate (4.2%). 
+          OCR accuracy on curved/glossy packaging was the primary bottleneck across all models.`
+        },
+        {
+          title: 'Technology Stack',
+          content: `Frontend: React Native · Backend: FastAPI (Python) · LLM: Claude API · 
+          OCR: Tesseract + GPT-4V fallback · Database: PostgreSQL + pgvector · 
+          Deployment: AWS Lambda + S3 · Auth: Auth0`
+        },
+        {
+          title: 'Data Flow Pipeline',
+          content: `Image capture → Pre-processing (contrast, rotation) → OCR extraction → 
+          Ingredient segmentation → LLM enrichment per ingredient → 
+          Personalization filter → Structured JSON response → React Native rendering`
+        }
+      ]
+    },
+    transit: {
+      tag: 'UX · Smart City · Accessibility',
+      title: 'Torch Optimizer: Traffic Signal Optimization for BVI Pedestrians',
+      sections: [
+        {
+          title: 'Overview',
+          open: true,
+          content: 'An adaptive traffic signal system combining IoT sensors and ML-based pedestrian detection to extend crossing time and provide audio cues for blind and visually impaired pedestrians.'
+        },
+        {
+          title: 'Research Approach',
+          content: 'Conducted field studies at 6 intersections across 3 cities. Shadowed BVI participants during real crossing scenarios to identify pain points with existing pedestrian infrastructure.'
+        }
+      ]
+    },
+    health: {
+      tag: 'Health UX · User Research',
+      title: 'Health & Your Brand: Patient-Centered Digital Health Design',
+      sections: [
+        {
+          title: 'Overview',
+          open: true,
+          content: 'A comprehensive UX research project examining how patients interact with digital health platforms, culminating in redesign recommendations that prioritize trust, health literacy, and accessibility.'
+        },
+        {
+          title: 'Methodology',
+          content: 'Mixed-methods study: 42 semi-structured interviews, diary studies over 3 weeks, and a quantitative survey (n=312). Participants ranged from digital natives to older adults with limited tech experience.'
+        }
+      ]
+    },
+    spectro: {
+      tag: 'ML · Spectroscopy · Materials Science',
+      title: 'FerroFlow: Raman Spectroscopy Optimisation for BIM Craft',
+      sections: [
+        {
+          title: 'Overview',
+          open: true,
+          content: 'A deep learning pipeline for automated classification and analysis of Raman spectroscopy signals to identify pigments and materials in Madhubhani and other Indian folk art artifacts.'
+        },
+        {
+          title: 'Technical Approach',
+          content: 'Used 1D-CNN architecture trained on a dataset of 3,200 spectra across 48 pigment classes. Achieved 94.7% top-1 accuracy. Integrated with a React-based web interface for use by non-technical conservators.'
+        }
+      ]
+    }
+  };
+
+  // ─── PROJECT PAGE ───
+  const ACCENTS = [
+    { bar: 'var(--rust)',  text: 'var(--rust)',  bullet_bg: 'var(--warm-white)', bullet_border: '#e8c4b0', num_bg: 'var(--rust)',  num_card: '#fff8f5',  num_border: '#f0c4b0' },
+    { bar: 'var(--teal)',  text: 'var(--teal)',  bullet_bg: 'var(--teal-light)', bullet_border: 'var(--teal-border)', num_bg: 'var(--teal)',  num_card: 'var(--teal-light)',  num_border: 'var(--teal-border)' },
+    { bar: 'var(--gold)',  text: 'var(--gold-dark)', bullet_bg: 'var(--gold-light)', bullet_border: 'var(--gold-border)', num_bg: 'var(--gold)', num_card: 'var(--gold-light)', num_border: 'var(--gold-border)' },
+    { bar: 'var(--sage)',  text: 'var(--sage)',  bullet_bg: 'var(--sage-light)', bullet_border: 'var(--sage-border)', num_bg: 'var(--sage)',  num_card: 'var(--sage-light)',  num_border: 'var(--sage-border)' },
+    { bar: 'var(--plum)',  text: 'var(--plum)',  bullet_bg: 'var(--plum-light)', bullet_border: 'var(--plum-border)', num_bg: 'var(--plum)',  num_card: 'var(--plum-light)',  num_border: 'var(--plum-border)' },
+  ];
+
+  function renderContent(raw) {
+    const lines = raw.split(/<br\/>/);
+    const parsed = lines.map(l => l.trim()).filter(l => l !== '');
+
+    // Pre-pass: mark grouped bullets and assign accent index per heading
+    const isGrouped = new Array(parsed.length).fill(false);
+    const accentIdx = new Array(parsed.length).fill(0);
+    let headingCount = 0;
+
+    for (let i = 0; i < parsed.length; i++) {
+      if (/^<b>[^<]+:<\/b>$/.test(parsed[i])) {
+        accentIdx[i] = headingCount % ACCENTS.length;
+        let j = i + 1;
+        while (j < parsed.length && parsed[j].startsWith('•')) {
+          isGrouped[j] = true;
+          accentIdx[j] = headingCount % ACCENTS.length;
+          j++;
+        }
+        headingCount++;
+      }
+    }
+
+    let html = '';
+    let idx = 0;
+    let standaloneAccent = 0;
+
+    lines.forEach(line => {
+      const trimmed = line.trim();
+      if (!trimmed) { html += '<div style="height:8px"></div>'; return; }
+
+      const i = parsed.indexOf(trimmed, idx);
+      const grouped = i >= 0 ? isGrouped[i] : false;
+      const ai = i >= 0 ? accentIdx[i] : 0;
+      const A = ACCENTS[ai];
+      if (i >= 0) idx = i + 1;
+
+      // Sub-heading: <b>Title:</b>
+      if (/^<b>[^<]+:<\/b>$/.test(trimmed)) {
+        html += `<div style="display:flex;align-items:center;gap:10px;margin:22px 0 8px;">
+          <span style="display:inline-block;width:3px;height:16px;background:${A.bar};border-radius:2px;flex-shrink:0;"></span>
+          <span style="font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;color:${A.text};letter-spacing:0.07em;text-transform:uppercase;">${trimmed.replace(/<\/?b>/g,'')}</span>
+        </div>`;
+      }
+      // Grouped bullet — compact inline
+      else if (trimmed.startsWith('•') && grouped) {
+        const content = trimmed.slice(1).trim();
+        html += `<div style="display:flex;align-items:baseline;gap:9px;padding:4px 0 4px 4px;">
+          <span style="color:${A.bar};font-size:13px;flex-shrink:0;margin-top:2px;">›</span>
+          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.75;">${content}</span>
+        </div>`;
+      }
+      // Standalone bullet — card style, cycle accent
+      else if (trimmed.startsWith('•')) {
+        const SA = ACCENTS[standaloneAccent % ACCENTS.length];
+        standaloneAccent++;
+        const content = trimmed.slice(1).trim();
+        html += `<div style="display:flex;align-items:flex-start;gap:10px;margin:7px 0;padding:10px 14px;background:${SA.bullet_bg};border-radius:8px;border-left:3px solid ${SA.bullet_border};">
+          <span style="color:${SA.bar};font-size:16px;line-height:1.4;flex-shrink:0;">›</span>
+          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.72;">${content}</span>
+        </div>`;
+      }
+      // Numbered lines — cycle accent
+      else if (/^\d+\./.test(trimmed)) {
+        const num = trimmed.match(/^(\d+)\./)[1];
+        const numIdx = (parseInt(num) - 1) % ACCENTS.length;
+        const NA = ACCENTS[numIdx];
+        const content = trimmed.replace(/^\d+\.\s*/, '');
+        html += `<div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:12px 16px;background:${NA.num_card};border-radius:8px;border:1px solid ${NA.num_border};">
+          <span style="background:${NA.num_bg};color:#fff;font-size:11px;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'Poppins',sans-serif;">${num}</span>
+          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.75;">${content}</span>
+        </div>`;
+      }
+      // Regular paragraph
+      else {
+        html += `<p style="font-size:13.5px;color:var(--charcoal);line-height:1.85;margin-bottom:6px;">${trimmed}</p>`;
+      }
+    });
+    return html;
+  }
+
+  function openProject(key) {
+    const p = projects[key];
+    if (!p) { console.error('No project found for key:', key); return; }
+
+    document.getElementById('pageTag').textContent = p.tag;
+    document.getElementById('pageTitle').textContent = p.title;
+
+    const bodyEl = document.getElementById('pageBody');
+    bodyEl.innerHTML = '';
+
+    p.sections.forEach((sec) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'collapsible' + (sec.open ? ' open' : '');
+      wrapper.innerHTML = `
+        <div class="collapsible-header" onclick="toggleCollapsible(this)">
+          <span class="collapsible-title">${sec.title}</span>
+          <span class="collapsible-arrow">⌄</span>
+        </div>
+        <div class="collapsible-body">${renderContent(sec.content)}</div>
+      `;
+      bodyEl.appendChild(wrapper);
+    });
+
+    const page = document.getElementById('projectPage');
+    page.classList.add('open');
+    page.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProject() {
+    document.getElementById('projectPage').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProject();
+  });
+
+  // ─── COLLAPSIBLE ───
+  function toggleCollapsible(header) {
+    const parent = header.parentElement;
+    parent.classList.toggle('open');
+  }
+
+  // ─── LOAD MORE ───
+  let loaded = false;
+  function loadMore() {
+    if (loaded) return;
+    loaded = true;
+    document.querySelectorAll('.project-card.hidden').forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.remove('hidden');
+        card.style.animationDelay = '0s';
+      }, i * 120);
+    });
+    document.getElementById('loadMoreBtn').textContent = 'All Projects Loaded ✓';
+    document.getElementById('loadMoreBtn').style.background = '#4a7c59';
+    document.getElementById('loadMoreBtn').onclick = null;
+  }
+</script>
