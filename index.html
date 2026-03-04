@@ -561,7 +561,7 @@
 
   .exp-item {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 0;
     border-bottom: 1px solid var(--border);
     padding: 48px 0;
@@ -587,10 +587,33 @@
   }
 
   .exp-logo-img {
-    max-width: 200px;
-    max-height: 120px;
     object-fit: contain;
     object-position: left center;
+    display: block;
+  }
+
+  /* IIL — square logo, show it large */
+  img.exp-logo-img[alt="Inclusive Interaction Lab"] {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* SOAIS — very wide banner, needs full width */
+  img.exp-logo-img[alt="SOAIS"] {
+    width: 190px;
+    height: auto;
+  }
+
+  /* Infosys — square, medium size */
+  img.exp-logo-img[alt="Infosys"] {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Xcelerator — square, medium size */
+  img.exp-logo-img[alt="Xcelerator"] {
+    width: 110px;
+    height: 110px;
   }
 
   .exp-dot {
@@ -1019,7 +1042,7 @@
     <!-- 3. Infosys -->
     <div class="exp-item">
       <div class="exp-logo-col">
-        <img src="Images/E03-Infosys_logo.png" alt="Infosys" class="exp-logo-img" style="background:#000;padding:6px 10px;border-radius:4px;"/>
+        <img src="Images/E03-Infosys_logo.png" alt="Infosys" class="exp-logo-img"/>
       </div>
       <div class="exp-dot"></div>
       <div class="exp-content">
