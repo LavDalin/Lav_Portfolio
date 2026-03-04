@@ -1,1 +1,185 @@
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/vkuDobFOh904zimKqD2zoA/Portfolio_v1?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavanya Dalin Annappa - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600&family=Roboto:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="section section-home" id="home">
+      <!-- 1. Header - Figma: HomePage_Header first visually -->
+      <header class="header">
+        <div class="header-flower header-flower-left" aria-hidden="true"></div>
+        <a href="#home" class="header-brand">LAVANYA DALIN ANNAPPA/ PORTFOLIO HOMEPAGE</a>
+        <nav class="header-nav">
+          <a href="#projects">PROJECTS</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#resume">RESUME</a>
+        </nav>
+        <div class="header-flower header-flower-right" aria-hidden="true"></div>
+      </header>
+
+      <!-- 2. Hero - Figma order: SLOGAN/INTRO, PORTRAIT, ABOUT, CONTACT -->
+      <div class="hero">
+        <div class="intro-card">
+          <div class="intro-flower intro-flower-left" aria-hidden="true"></div>
+          <h1 class="intro-name">Lavanya Dalin Annappa</h1>
+          <p class="intro-subtitle">UX Researcher/Human Factors Engineer<br />University of California, Merced</p>
+          <div class="intro-flower intro-flower-right" aria-hidden="true"></div>
+          <div class="intro-vector" aria-hidden="true"></div>
+        </div>
+
+        <div class="portrait-wrap">
+          <img src="./assets/portrait.png" alt="Lavanya Dalin Annappa" class="portrait-img" loading="eager" />
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon" aria-hidden="true"></div>
+          <p class="about-text">
+            I am a Master's student in Computer Engineering at UC Merced, researching human-computer interaction and assistive technology in the Inclusive Interaction Lab. I specialize in developing haptic feedback systems for accessible navigation.<br /><br />
+            My work bridges user research, interaction design, and technology development to create inclusive solutions. I am a mixed methods researcher conducting usability studies, build prototypes, and apply machine learning to enhance user experiences, all focused on developing technology that meaningfully improves people's lives.<br /><br />
+            My research interests center on Human Factors, UX Research, Accessibility, and Intelligent Systems.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h2 class="contact-title">Contact Info</h2>
+          <p class="contact-email">ldalinannappa@ucmerced.edu</p>
+          <p class="contact-phone">+1 209-291-4393</p>
+          <div class="contact-icons">
+            <a href="mailto:ldalinannappa@ucmerced.edu" class="contact-icon" aria-label="Email">
+              <img src="./assets/gmail.png" alt="" width="48" height="48" />
+            </a>
+            <a href="https://www.linkedin.com/in/lavanya-dalin-annappa" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="LinkedIn">
+              <img src="./assets/linkedin.png" alt="" width="48" height="48" />
+            </a>
+            <a href="https://github.com/ldalinannappa" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="GitHub">
+              <img src="./assets/github.png" alt="" width="48" height="48" />
+            </a>
+          </div>
+          <div class="contact-phone-icon" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- 3. Projects header - Figma: Project_Header -->
+      <div class="projects-header" id="projects">
+        <div class="projects-header-flower projects-header-flower-left" aria-hidden="true"></div>
+        <h2 class="projects-header-title">PROJECTS</h2>
+        <div class="projects-header-flower projects-header-flower-mid" aria-hidden="true"></div>
+        <div class="projects-header-flower projects-header-flower-right" aria-hidden="true"></div>
+      </div>
+
+      <!-- 4. Projects grid - Figma: Group 29 (project titles link to prototype sections) -->
+      <div class="projects-grid">
+        <div class="project-card project-card-1">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#haptic-project" class="project-title-link">TactileAlign: An Assistive HCI System for Visually Impaired Camera Alignment</a></h3>
+          <p class="project-desc">A haptic system that guides visually impaired users to align mobile cameras using real-time haptic feedback through vibration motors.</p>
+        </div>
+        <div class="project-card project-card-2">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#madhubani-project" class="project-title-link">Madhubani AI: Cultural Heritage Preservation via PEFT</a></h3>
+          <p class="project-desc">Fine-tuning generative models to synthesize 2,500-year-old traditional Indian art, achieving authentic geometric precision where base models fail.</p>
+        </div>
+        <div class="project-card project-card-3">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#llm-project" class="project-title-link">Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment</a></h3>
+          <p class="project-desc">An intelligent AI agent that reduces product research time by 95%, transforming complex ingredient lists into clear, fact-checked health insights in under 5 seconds.</p>
+        </div>
+        <div class="project-card project-card-4">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#project-teachu" class="project-title-link">TeachU: AI Learning Platform</a></h3>
+          <p class="project-desc">An AI-powered platform that transforms static PDFs into animated educational videos in under a minute, presented at the 2024 TED AI Hackathon.</p>
+        </div>
+        <div class="project-card project-card-5">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#project-echofilter" class="project-title-link">EchoFilter: Precision Spectrogram Optimization for Bird Calls</a></h3>
+          <p class="project-desc">A dual-stage framework that isolates bird calls from environmental noise by combining raw audio denoising with targeted spectrogram enhancement to preserve key biological motifs.</p>
+        </div>
+        <div class="project-card project-card-6">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#project-healthbot" class="project-title-link">Health Bot: Voice-Based Medical Assistant</a></h3>
+          <p class="project-desc">A voice-activated diagnostic assistant that uses speech-to-text interaction and contextual memory to identify health issues with 95% precision.</p>
+        </div>
+        <div class="project-card project-card-7">
+          <div class="project-socials-bar"></div>
+          <h3 class="project-title"><a href="#project-movie" class="project-title-link">Personalized Movie Recommender Systems</a></h3>
+          <p class="project-desc">Two distinct recommender systems built in R using content-based and collaborative filtering to deliver personalized movie suggestions based on genre similarity and historical user preferences.</p>
+        </div>
+        <div class="project-card project-card-more">
+          <p class="project-more-text">Loading More<br />Projects Soon....</p>
+        </div>
+      </div>
+
+      <!-- Project detail sections (Figma prototype destinations: /Haptic-project_v2, /Madhubhani_project, /LLm_project) -->
+      <section class="section project-detail" id="haptic-project" aria-label="TactileAlign Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">TactileAlign: An Assistive HCI System for Visually Impaired Camera Alignment</h2>
+          <p class="about-text">This is the project detail section linked from the homepage (Figma: /Haptic-project_v2). Add full content from your Figma prototype here—overview, hardware development, user studies, etc.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="madhubani-project" aria-label="Madhubani AI Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">Madhubani AI: Cultural Heritage Preservation via PEFT</h2>
+          <p class="about-text">This is the project detail section (Figma: /Madhubhani_project). Add your Madhubani AI project content here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="llm-project" aria-label="Multi-modal Ingredient Analyzer Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment</h2>
+          <p class="about-text">This is the project detail section (Figma: /LLm_project). Add your LLM / Ingredient Analyzer project content here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="project-teachu" aria-label="TeachU Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">TeachU: AI Learning Platform</h2>
+          <p class="about-text">Project detail section for TeachU. Add content from your Figma prototype here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="project-echofilter" aria-label="EchoFilter Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">EchoFilter: Precision Spectrogram Optimization for Bird Calls</h2>
+          <p class="about-text">Project detail section for EchoFilter. Add content here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="project-healthbot" aria-label="Health Bot Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">Health Bot: Voice-Based Medical Assistant</h2>
+          <p class="about-text">Project detail section for Health Bot. Add content here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+      <section class="section project-detail" id="project-movie" aria-label="Movie Recommender Project">
+        <div class="project-detail-inner">
+          <h2 class="project-detail-title">Personalized Movie Recommender Systems</h2>
+          <p class="about-text">Project detail section for Movie Recommender Systems. Add content here.</p>
+          <a href="#projects" class="project-detail-back">← Back to Projects</a>
+        </div>
+      </section>
+
+      <section class="section section-experience" id="experience" aria-label="Experience">
+        <div class="experience-placeholder">
+          <h2 class="projects-header-title">EXPERIENCE</h2>
+          <p class="about-text">Experience section — content from Figma /Experience page can be added here.</p>
+        </div>
+      </section>
+      <section class="section section-resume" id="resume" aria-label="Resume">
+        <div class="experience-placeholder">
+          <h2 class="projects-header-title">RESUME</h2>
+          <p class="about-text">Resume link or embed — add your PDF or link here.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
