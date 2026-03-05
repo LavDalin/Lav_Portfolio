@@ -104,39 +104,42 @@
   .floral { display: none; }
 
   .hero-inner {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 48px;
-    padding: 56px 48px;
-    align-items: stretch;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    padding: 48px 48px;
+    align-items: start;
     position: relative;
     z-index: 1;
   }
 
-  .hero-left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+  .hero-left { display: flex; flex-direction: column; align-items: center; }
 
   .hero-name {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(36px, 5vw, 58px);
-    line-height: 1.05;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
     color: var(--ink);
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--ink);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+    text-align: center;
   }
 
   .hero-uni {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    text-align: center;
   }
 
   /* Bio card */
@@ -144,19 +147,15 @@
     background: var(--cream);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 32px 28px;
+    padding: 24px 26px;
     width: 100%;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: auto;
   }
 
   .bio-dot { display: none; }
 
   .bio-text {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--charcoal);
     line-height: 1.75;
     text-align: justify;
@@ -167,7 +166,7 @@
   .bio-text strong { font-weight: 600; color: var(--ink); }
 
   /* Right column */
-  .hero-right { display: flex; flex-direction: column; gap: 20px; }
+  .hero-right { display: flex; flex-direction: column; gap: 16px; }
 
   .hero-photo {
     width: 100%;
@@ -184,17 +183,16 @@
     background: var(--cream);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 20px 22px;
+    padding: 18px 20px;
     width: 100%;
-    flex: 1;
   }
 
   .contact-card h4 {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--ink);
     margin-bottom: 12px;
   }
 
@@ -1140,8 +1138,10 @@
           • <b>Arduino Nano ESP32</b> microcontroller — enables independent PWM control of 6 vibration motors<br/>
           • <b>6 vibration motors</b> strategically placed at the four corners and two mid-points of the smartphone back<br/>
           • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:flex;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);flex:1;text-align:center;">Hardware Setup</span><span style="font-size:11px;color:var(--muted);flex:1;text-align:center;">Motor Placement</span></div>
+          <img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
+          <img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:60%;border-radius:8px;display:block;margin:0 auto 6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
           <b>Motor placement design rationale:</b><br/>
           • Maximizes spatial differentiation between tactile zones<br/>
           • Ensures comprehensive device coverage<br/>
@@ -1158,8 +1158,10 @@
           • Android app handled live camera streaming (MJPEG format), audio feedback via Text-to-Speech, and automatic CSV logging of tasks<br/>
           • Arduino ESP32 hosted a <b>browser-based controller</b> to send directional commands and adjust vibration intensity (0–255)<br/>
           • PWM signals used for precise, software-configurable haptic control<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Web Controller</span><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
+          <img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 6px;"><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
           <b>Why Wizard-of-Oz?</b><br/>
           • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
           • A researcher operated the web controller in real time while participants completed navigation tasks`
@@ -1186,14 +1188,16 @@
           • Within-subjects design: <b>2,052 trials</b> across 3 prototypes, 3 grip postures, 4 directions<br/>
           • Latin square randomization to control order effects; feedback withheld during testing<br/>
           • Measured: success rate, task duration, Single Ease Questionnaire (SEQ), System Usability Scale (SUS), NASA-TLX<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.10 - UserStudySetup.jpg" alt="User Study Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant User Study 1" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.10 - UserStudySetup.jpeg" alt="User Study Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant User Study 1" style="width:100%;border-radius:8px;display:block;"/></div>
           <b>Results:</b><br/>
           • <b>Cylindrical motor</b> achieved the highest overall success rate: <b>66.67%</b><br/>
           • Cylindrical outperformed others across all hand conditions (62.72–73.68%) and most directions, including leftward tasks (73.10%)<br/>
           • Flat motor excelled only in upward movements (73.10%) but struggled with lateral directions (40.94–45.03%)<br/>
           • Cuboid maintained moderate performance (64.91%) across all conditions<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Motor Success</span><span style="font-size:11px;color:var(--muted);text-align:center;">Grip Success</span><span style="font-size:11px;color:var(--muted);text-align:center;">Directional Success</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 6px;"><img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Motor Performance: Success Rate</span><span style="font-size:11px;color:var(--muted);text-align:center;">Grip Posture: Success Rate</span></div>
+          <img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
           <b>Qualitative Ratings (1–5 scale):</b><br/>
           • Cylindrical scored highest overall (4.1–4.5), especially in "Comfortable to Use" (4.5) and "Overall Preference" (4.2)<br/>
           • Flat motor performed well (4.0–4.3); Cuboid scored lowest on "Clarity of Feedback" (3.3) and "Overall Preference" (3.4)<br/>
@@ -1207,14 +1211,16 @@
           • Researcher remotely triggered directional guidance using a custom <b>web-based controller + mobile app</b><br/>
           • Three feedback conditions tested: <b>Haptic only</b>, <b>Audio only</b>, <b>No feedback</b><br/>
           • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 16px;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
+          <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
+          <img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
+          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
           <b>Results:</b><br/>
           • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
           • <b>Haptic</b> feedback was slower — mean duration: <b>45,267 ms</b> — but provided directional precision audio could not<br/>
           • Shapiro-Wilk test confirmed non-normal distribution (p &lt; 0.001)<br/>
           • Friedman + Nemenyi post-hoc tests confirmed haptic was significantly slower than no-feedback condition (p = .004)<br/><br/>
-          <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:100%;border-radius:8px;object-fit:contain;background:#f9f6f1;margin:12px 0;"/><br/>
           <b>Key insight:</b> Haptic was slower but uniquely enabled <b>silent, private navigation</b> — a trade-off users considered worthwhile for accessibility contexts where audio is impractical`
         },
         {
