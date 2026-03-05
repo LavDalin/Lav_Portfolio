@@ -1140,7 +1140,7 @@
           • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
           <img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
-          <img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:60%;border-radius:8px;display:block;margin:0 auto 6px;"/>
+          <img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:35%;border-radius:8px;display:block;margin:0 auto 6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
           <b>Motor placement design rationale:</b><br/>
           • Maximizes spatial differentiation between tactile zones<br/>
@@ -1160,8 +1160,8 @@
           • PWM signals used for precise, software-configurable haptic control<br/><br/>
           <img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 6px;"><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 6px;width:60%;margin-left:auto;margin-right:auto;"><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;width:60%;margin-left:auto;margin-right:auto;"><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
           <b>Why Wizard-of-Oz?</b><br/>
           • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
           • A researcher operated the web controller in real time while participants completed navigation tasks`
@@ -1188,14 +1188,23 @@
           • Within-subjects design: <b>2,052 trials</b> across 3 prototypes, 3 grip postures, 4 directions<br/>
           • Latin square randomization to control order effects; feedback withheld during testing<br/>
           • Measured: success rate, task duration, Single Ease Questionnaire (SEQ), System Usability Scale (SUS), NASA-TLX<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.10 - UserStudySetup.jpeg" alt="User Study Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant User Study 1" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 6px;"><img src="Images/P01.5 - WebBrowser.png" alt="Web browser controller interface" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.10 - UserStudySetup.jpg" alt="Prototypes setup for the user study" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant during the user study" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Web browser controller interface</span><span style="font-size:11px;color:var(--muted);text-align:center;">Prototypes setup for the user study</span><span style="font-size:11px;color:var(--muted);text-align:center;">Participant during the user study</span></div>
           <b>Results:</b><br/>
           • <b>Cylindrical motor</b> achieved the highest overall success rate: <b>66.67%</b><br/>
           • Cylindrical outperformed others across all hand conditions (62.72–73.68%) and most directions, including leftward tasks (73.10%)<br/>
           • Flat motor excelled only in upward movements (73.10%) but struggled with lateral directions (40.94–45.03%)<br/>
           • Cuboid maintained moderate performance (64.91%) across all conditions<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 6px;"><img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;"><span style="font-size:11px;color:var(--muted);text-align:center;">Motor Performance: Success Rate</span><span style="font-size:11px;color:var(--muted);text-align:center;">Grip Posture: Success Rate</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 16px;align-items:stretch;">
+            <div style="display:flex;flex-direction:column;">
+              <img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;flex:1;"/>
+              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Motor Performance: Success Rate</p>
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;flex:1;"/>
+              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Grip Posture: Success Rate</p>
+            </div>
+          </div>
           <img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
           <b>Qualitative Ratings (1–5 scale):</b><br/>
@@ -1212,9 +1221,9 @@
           • Three feedback conditions tested: <b>Haptic only</b>, <b>Audio only</b>, <b>No feedback</b><br/>
           • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 16px;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
-          <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
+          <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:70%;border-radius:8px;display:block;margin:16px auto 6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
-          <img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
+          <img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:70%;border-radius:8px;display:block;margin:0 auto 6px;"/>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
           <b>Results:</b><br/>
           • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
@@ -1230,7 +1239,7 @@
           • Tested <b>5 distinct haptic patterns</b>: Pulse, Patterned Buzz, Rapid Buzz, Wave, Heartbeat<br/>
           • Preferred intensity measured at <b>210–255 PWM</b> for optimal directional accuracy<br/>
           • Qualitative ratings on a 1–5 scale (1 = most preferred, 5 = least preferred) across Extended Use, Ease of Use, Comfort, and Overall Preference<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;"><img src="Images/P01.21 - Participant1_UserStudy3.jpeg" alt="Participant 1 Study 3" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.22_Participant2_UserStudy3.jpeg" alt="Participant 2 Study 3" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px auto;width:70%;"><img src="Images/P01.21 - Participant1_UserStudy3.jpeg" alt="Participant 1 Study 3" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.22_Participant2_UserStudy3.jpeg" alt="Participant 2 Study 3" style="width:100%;border-radius:8px;display:block;"/></div>
           <b>Results:</b><br/>
           • <b>Wave pattern performed best</b> across all metrics (1.46–1.71) — rated most intuitive and comfortable<br/>
           • Patterned Buzz ranked second (2.00–2.21)<br/>
