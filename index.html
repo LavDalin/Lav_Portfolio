@@ -110,12 +110,12 @@
     grid-template-columns: 1fr 280px;
     gap: 40px;
     padding: 48px 48px;
-    align-items: start;
+    align-items: stretch;
     position: relative;
     z-index: 1;
   }
 
-  .hero-left { display: flex; flex-direction: column; align-items: center; }
+  .hero-left { display: flex; flex-direction: column; align-items: center; height: 100%; }
 
   .hero-name {
     font-family: 'Poppins', sans-serif;
@@ -128,7 +128,7 @@
   }
 
   .hero-title {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--ink);
     margin-bottom: 4px;
@@ -136,7 +136,7 @@
   }
 
   .hero-uni {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--muted);
     margin-bottom: 24px;
     text-align: center;
@@ -150,20 +150,22 @@
     padding: 24px 26px;
     width: 100%;
     position: relative;
+    flex: 1;
   }
 
   .bio-dot { display: none; }
 
   .bio-text {
-    font-size: 13.5px;
+    font-size: 18px;
     color: var(--charcoal);
     line-height: 1.75;
     text-align: justify;
+    font-weight: 300;
   }
 
-  .bio-text p { margin-bottom: 12px; }
+  .bio-text p { margin-bottom: 20px; }
   .bio-text p:last-child { margin-bottom: 0; }
-  .bio-text strong { font-weight: 600; color: var(--ink); }
+  .bio-text strong { font-weight: 500; color: var(--ink); }
 
   /* Right column */
   .hero-right { display: flex; flex-direction: column; gap: 16px; }
@@ -188,7 +190,7 @@
   }
 
   .contact-card h4 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-transform: none;
@@ -198,11 +200,13 @@
 
   .contact-item {
     display: flex; align-items: center; gap: 10px;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--charcoal);
     margin-bottom: 8px;
     text-decoration: none;
     transition: color 0.2s;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .contact-item:hover { color: var(--rust); }
@@ -482,7 +486,7 @@
 
   .collapsible-title {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 20px;
     color: var(--rust);
     letter-spacing: 0.01em;
     font-family: 'Poppins', sans-serif;
@@ -503,7 +507,7 @@
     max-height: 0; overflow: hidden;
     transition: max-height 0.45s ease, padding 0.3s;
     background: #fff;
-    font-size: 14px; color: var(--charcoal); line-height: 1.85;
+    font-size: 18px; color: var(--charcoal); line-height: 1.85; font-weight: 300;
   }
 
   .collapsible.open .collapsible-body {
@@ -512,9 +516,10 @@
   }
 
   /* Rich content styles inside collapsible body */
-  .collapsible-body b {
+  .collapsible-body b,
+  .collapsible-body strong {
     color: var(--ink);
-    font-weight: 700;
+    font-weight: 500;
   }
 
   /* Bullet point lines get styled */
@@ -575,7 +580,7 @@
   }
 
   .exp-logo-col {
-    padding-right: 40px;
+    padding-right: 20px;
     display: flex; flex-direction: column;
     align-items: flex-start;
     gap: 12px;
@@ -583,33 +588,13 @@
   }
 
   .exp-logo-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 120px;
+    max-height: 80px;
     object-fit: contain;
     object-position: left center;
-    display: block;
-  }
-
-  /* IIL — square logo, show it large */
-  img.exp-logo-img[alt="Inclusive Interaction Lab"] {
-    width: 130px;
-    height: 130px;
-  }
-
-  /* SOAIS — very wide banner, constrain to column */
-  img.exp-logo-img[alt="SOAIS"] {
-    width: 160px;
-    height: auto;
-  }
-
-  /* Infosys — square, medium size */
-  img.exp-logo-img[alt="Infosys"] {
-    width: 110px;
-    height: 110px;
-  }
-
-  /* Xcelerator — square, medium size */
-  img.exp-logo-img[alt="Xcelerator"] {
-    width: 110px;
-    height: 110px;
   }
 
   .exp-dot {
@@ -623,11 +608,11 @@
     box-shadow: 0 0 0 2px var(--rust);
   }
 
-  .exp-content { padding-left: 40px; }
+  .exp-content { padding-left: 20px; }
 
   .exp-role {
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 23px;
     color: var(--rust);
     margin-bottom: 4px;
     line-height: 1.2;
@@ -636,9 +621,10 @@
   .exp-role a { color: var(--rust); }
 
   .exp-company-line {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--muted);
     margin-bottom: 20px;
+    font-weight: 300;
   }
 
   .exp-company-line strong { color: var(--charcoal); font-weight: 600; }
@@ -650,21 +636,22 @@
   }
 
   .exp-bullets li {
-    font-size: 13.5px;
+    font-size: 18px;
     color: var(--charcoal);
     line-height: 1.65;
     padding-left: 14px;
     position: relative;
+    font-weight: 300;
   }
 
   .exp-bullets li::before {
     content: '·';
     position: absolute; left: 0;
     color: var(--rust);
-    font-size: 18px; line-height: 1.3;
+    font-size: 50px; line-height: 0.45;
   }
 
-  .exp-bullets li strong { font-weight: 600; color: var(--ink); }
+  .exp-bullets li strong { font-weight: 500; color: var(--ink); }
 
   .exp-skills-block {
     background: var(--cream);
@@ -675,7 +662,7 @@
   }
 
   .exp-skills-label {
-    font-size: 9px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -684,10 +671,11 @@
   }
 
   .exp-skill-row {
-    font-size: 12px;
+    font-size: 18px;
     color: var(--charcoal);
     line-height: 1.7;
     margin-bottom: 2px;
+    font-weight: 300;
   }
 
   .exp-skill-row strong {
@@ -831,11 +819,11 @@
       <img src="Images/Lav_Photo.jpg" alt="Lavanya Dalin Annappa" class="hero-photo"/>
       <div class="contact-card">
         <h4>Contact Info</h4>
-        <a href="/cdn-cgi/l/email-protection#422e26232e2b2c232c2c233232230237212f27302127266c272637" class="contact-item">
+        <a href="mailto:ldalinannappa@ucmerced.edu" class="contact-item">
           <span class="contact-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           </span>
-          <span class="__cf_email__" data-cfemail="6f030b0e0306010e01010e1f1f0e2f1a0c020a1d0c0a0b410a0b1a">[email&#160;protected]</span>
+          ldalinannappa@ucmerced.edu
         </a>
         <a href="tel:+12092914393" class="contact-item">
           <span class="contact-icon-wrap">
@@ -867,7 +855,7 @@
     <!-- Card 1 -->
     <div class="project-card" onclick="openProject('haptic')">
       <div class="card-thumb" style="background:#c9b89e; padding:0; overflow:hidden;">
-        <img src="haptic-thumb.jpg" alt="Young blind woman using phone" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+        <img src="Images/P01.1-Proj_1_thumnail.jpg" alt="Young blind woman using phone" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
         <span class="card-category">HCI · Assistive Tech</span>
       </div>
       <div class="card-body">
@@ -884,8 +872,8 @@
 
     <!-- Card 2 -->
     <div class="project-card" onclick="openProject('madhubhani')">
-      <div class="card-thumb" style="background: linear-gradient(135deg,#f5e6d0,#e8c5a0);">
-        <span class="card-thumb-emoji">🎨</span>
+      <div class="card-thumb" style="background:#e8c5a0;padding:0;overflow:hidden;">
+        <img src="Images/P02.1-Proj_2_thumnail.jpg" alt="Madhubhani AI" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         <span class="card-category">AI · Cultural Heritage</span>
       </div>
       <div class="card-body">
@@ -1117,7 +1105,7 @@
         {
           title: 'Overview',
           open: true,
-          content: `<img src="Images/P01.1 - Proj_1_thumnail.jpg" alt="Project Overview" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><b>Research Question:</b> Can directional vibrotactile patterns on smartphone backs enable eyes-free navigation and private input for visually impaired users?<br/><br/>
+          content: `<img src="Images/P01.1-Proj_1_thumnail.jpg" alt="Project Overview" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><b>Research Question:</b> Can directional vibrotactile patterns on smartphone backs enable eyes-free navigation and private input for visually impaired users?<br/><br/>
           <b>What this project addresses:</b><br/>
           • Visually impaired users rely heavily on audio feedback (screen readers), which lacks privacy and excludes silent environments<br/>
           • Existing haptic interfaces are limited to simple alerts — not directional or spatial guidance<br/>
@@ -1139,9 +1127,9 @@
           • <b>6 vibration motors</b> strategically placed at the four corners and two mid-points of the smartphone back<br/>
           • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
           <img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
           <img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:35%;border-radius:8px;display:block;margin:0 auto 6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
           <b>Motor placement design rationale:</b><br/>
           • Maximizes spatial differentiation between tactile zones<br/>
           • Ensures comprehensive device coverage<br/>
@@ -1159,9 +1147,9 @@
           • Arduino ESP32 hosted a <b>browser-based controller</b> to send directional commands and adjust vibration intensity (0–255)<br/>
           • PWM signals used for precise, software-configurable haptic control<br/><br/>
           <img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 6px;width:60%;margin-left:auto;margin-right:auto;"><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;width:60%;margin-left:auto;margin-right:auto;"><span style="font-size:11px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:11px;color:var(--muted);text-align:center;">Command Control</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;width:60%;margin-left:auto;margin-right:auto;"><span style="font-size:18px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:18px;color:var(--muted);text-align:center;">Command Control</span></div>
           <b>Why Wizard-of-Oz?</b><br/>
           • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
           • A researcher operated the web controller in real time while participants completed navigation tasks`
@@ -1188,18 +1176,18 @@
           • Within-subjects design: <b>2,052 trials</b> across 3 prototypes, 3 grip postures, 4 directions<br/>
           • Latin square randomization to control order effects; feedback withheld during testing<br/>
           • Measured: success rate, task duration, Single Ease Questionnaire (SEQ), System Usability Scale (SUS), NASA-TLX<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1.2fr 1.5fr;gap:12px;margin:16px 0 6px;align-items:end;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 6px;align-items:start;">
             <div style="display:flex;flex-direction:column;">
-              <img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Web browser controller interface" style="width:100%;height:240px;object-fit:cover;object-position:top;border-radius:8px;display:block;"/>
-              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;">Web browser controller interface</p>
+              <img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Web browser controller interface" style="width:100%;height:auto;border-radius:8px;display:block;"/>
+              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Web browser controller interface</p>
             </div>
             <div style="display:flex;flex-direction:column;">
-              <img src="Images/P01.10 - UserStudySetup.jpeg" alt="Prototypes setup for the user study" style="width:100%;height:300px;object-fit:cover;object-position:center;border-radius:8px;display:block;"/>
-              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;">Prototypes setup for the user study</p>
+              <img src="Images/P01.10 - UserStudySetup.jpeg" alt="Prototypes setup for the user study" style="width:100%;height:auto;border-radius:8px;display:block;"/>
+              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Prototypes setup for the user study</p>
             </div>
             <div style="display:flex;flex-direction:column;">
-              <img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant during the user study" style="width:100%;height:180px;object-fit:cover;object-position:top;border-radius:8px;display:block;"/>
-              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;">Participant during the user study</p>
+              <img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant during the user study" style="width:100%;height:auto;border-radius:8px;display:block;"/>
+              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Participant during the user study</p>
             </div>
           </div>
           <b>Results:</b><br/>
@@ -1210,15 +1198,15 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 16px;align-items:center;">
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;"/>
-              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Motor Performance: Success Rate</p>
+              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Motor Performance: Success Rate</p>
             </div>
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;"/>
-              <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Grip Posture: Success Rate</p>
+              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Grip Posture: Success Rate</p>
             </div>
           </div>
           <img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
           <b>Qualitative Ratings (1–5 scale):</b><br/>
           • Cylindrical scored highest overall (4.1–4.5), especially in "Comfortable to Use" (4.5) and "Overall Preference" (4.2)<br/>
           • Flat motor performed well (4.0–4.3); Cuboid scored lowest on "Clarity of Feedback" (3.3) and "Overall Preference" (3.4)<br/>
@@ -1232,11 +1220,11 @@
           • Researcher remotely triggered directional guidance using a custom <b>web-based controller + mobile app</b><br/>
           • Three feedback conditions tested: <b>Haptic only</b>, <b>Audio only</b>, <b>No feedback</b><br/>
           • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 16px;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 16px;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;filter:brightness(0.75);"/><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
           <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:70%;border-radius:8px;display:block;margin:16px auto 6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
           <img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:70%;border-radius:8px;display:block;margin:0 auto 6px;"/>
-          <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
+          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
           <b>Results:</b><br/>
           • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
           • <b>Haptic</b> feedback was slower — mean duration: <b>45,267 ms</b> — but provided directional precision audio could not<br/>
@@ -1275,35 +1263,143 @@
       title: 'Madhubhani AI: Cultural Heritage Preservation via PEFT',
       sections: [
         {
-          title: 'The Story',
+          title: 'Overview',
           open: true,
-          content: `Madhubhani painting is a centuries-old folk art tradition from the Mithila region of Bihar, India. 
-          With practitioners aging and fewer young artists continuing the tradition, this project uses AI to document, 
-          analyze, and generate authentic Madhubhani-style artwork — preserving the visual grammar of this endangered artform.`
-        },
-        {
-          title: 'What I Set Out to Do',
-          content: `The core goal was to fine-tune a generative image model to produce Madhubhani-style art that is 
-          culturally faithful, not just aesthetically similar. I used Parameter-Efficient Fine-Tuning (PEFT / LoRA) 
-          on Stable Diffusion, trained on a curated dataset of ~2,400 authenticated Madhubhani works.`
+          content: `<img src="Images/P02.1-Proj_2_thumnail.jpg" alt="Madhubhani AI Overview" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:16px 20px;margin-bottom:20px;"><span style="font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;">Research Question</span><span style="font-size:18px;color:var(--charcoal);line-height:1.75;font-weight:300;">Can <b>Parameter-Efficient Fine-Tuning (PEFT)</b> on diffusion models generate culturally faithful Madhubhani artwork that preserves the <b>visual grammar</b> of this endangered folk art tradition?</span></div><br/>
+<b>What this project addresses:</b><br/>
+• <b>Madhubhani painting</b> is a centuries-old folk art tradition from the <b>Mithila region of Bihar, India</b><br/>
+• With practitioners aging and fewer young artists continuing the tradition, the art form risks <b>cultural extinction</b><br/>
+• This project uses <b>AI to document, analyze, and generate</b> authentic Madhubhani-style artwork — preserving its <b>visual grammar</b> for future generations<br/>
+• Impact: enables <b>digital preservation, artist education,</b> and cultural archiving of Madhubhani art at scale`
         },
         {
           title: 'Model Training and Results',
-          content: `Using LoRA adapters reduced training compute by 87% vs. full fine-tuning while maintaining 
-          visual fidelity. FID score: 28.4 (vs. 61.2 baseline). Expert evaluators — including 2 practicing Madhubhani artists — 
-          rated 74% of generated images as "culturally authentic."`
+          content: `<b>Overview:</b><br/>
+• Fine-tuning pipeline built on <b>Stable Diffusion v1.5</b> using adaptation methods: <b>LoRA, DoRA, HyperLoRA</b><br/>
+• Adapters applied to <b>U-Net attention layers</b> — VAE and text encoders remain <b>frozen</b><br/>
+• Achieves <b>99% parameter reduction</b> by updating only low-rank adapter matrices<br/>
+• <b>DoRA r=64</b> delivered the best results: 3.1 min training, 8.45GB VRAM, 52MB model size<br/><br/>
+<b>Experiment Setup:</b><br/>
+• <b>13 model configurations</b> trained across different ranks (16–128) and dataset sizes (10–50 images)<br/>
+• Dataset: <b>50 hand-picked</b> authentic Madhubhani paintings<br/>
+• Hardware: <b>NVIDIA RTX 6000 Ada GPU</b> with 48GB VRAM<br/><br/>
+<b>Training Methods:</b><br/>
+• <b>LoRA</b> — Low-Rank Adaptation<br/>
+• <b>DoRA</b> — Weight-Decomposed LoRA<br/>
+• <b>HyperLoRA</b> — Context-aware adaptation`
+        },
+        {
+          title: 'Experiment: Architecture',
+          content: `<b>1. Input Layer:</b><br/>
+• Takes in <b>512×512 RGB</b> Madhubhani paintings paired with custom <b>captions from .txt files</b><br/>
+• Each image gets a caption describing its specific features, motifs, and style<br/><br/>
+<img src="Images/P02.2 - ExamplePicture_MadubhaniArt.jpg" alt="Madhubhani Art with Caption" style="width:60%;height:auto;border-radius:8px;display:block;margin:12px auto 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:16px;">Caption: "madhubani_style, two women in brightly colored saris carrying pots on their heads, village scene, well, trees with mango fruit"</p><br/>
+<b>2. Encoding Layer:</b><br/>
+• <b>VAE Encoder</b> compresses images from 512×512 → <b>64×64 latent space</b> (97% compression)<br/>
+• <b>CLIP Text Encoder</b> converts captions into <b>768-dimensional embeddings</b> (max 77 tokens)<br/>
+• Both encoders remain <b>FROZEN</b> — pre-trained knowledge is untouched during training<br/><br/>
+<b>3. Core Processing:</b><br/>
+• <b>ResNet Blocks</b> (4 downsampling + 4 upsampling) handle feature extraction — all FROZEN<br/>
+• <b>Attention Layers</b> are where <b>LoRA/DoRA adapters attach</b> — targeting: to_q, to_k, to_v, to_out.0<br/>
+• These attention layers are the <b>ONLY trainable components</b> in the entire model<br/><br/>
+<b>4. Output Layer:</b><br/>
+• Produces <b>noise prediction (εθ)</b> and saves only LoRA/DoRA weights in .safetensors format<br/>
+• Tiny output files: <b>25–52 MB</b> depending on rank, vs. the full 860M parameter base model<br/><br/>
+<img src="Images/P02.3 - ModelArchitecture.png" alt="Complete Model Architecture" style="width:100%;height:auto;border-radius:8px;display:block;margin:16px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Complete architecture of the Model</p>`
+        },
+        {
+          title: 'The Caption Strategy',
+          content: `<b>How captions work:</b><br/>
+• Trigger phrase <i>"madhubani art painting"</i> anchors every caption for consistency across all 50 images<br/>
+• Detailed descriptions teach the model to <b>connect specific terms</b> with visual features<br/>
+• e.g. <i>"double-line borders"</i> = thick outer + thin inner lines; <i>"geometric patterns"</i> = mathematical symmetry<br/><br/>
+<b>Caption Formula:</b><br/>
+<div style="background:var(--warm-white);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin:10px 0 16px;font-size:16px;color:var(--charcoal);line-height:1.8;font-style:italic;">"madhubani art painting, [subject], [pattern details], [color palette], traditional Indian folk art, intricate geometric patterns, bold black outlines, vibrant colors"</div><br/>
+<b>Real Examples:</b><br/>
+• <b>Deity:</b> "madhubani art painting, sacred Ganesh with ornate decorations, intricate geometric patterns, double-line borders, vibrant red, yellow, blue, and green colors, traditional folk art motifs"<br/>
+• <b>Ritual:</b> "madhubani style, Chhath Puja ritual scene, women worshipping the Sun God in the river, surrounded by sugarcane and banana plants, bright colors, geometric and patterned borders"<br/>
+• <b>Animal:</b> "madhubani art painting, sacred elephant adorned with traditional jewelry, bold outlines, vibrant red, blue, yellow and green colors, folk art motifs"<br/><br/>
+<b>Training Configuration:</b><br/>
+<img src="Images/P02.4 - TrainingConfig.png" alt="Training Configuration 9-step workflow" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Training Configuration — 9-step workflow</p>
+• Follows a systematic <b>9-step workflow</b> — only adapter parameters are fine-tuned; base model stays frozen<br/>
+• Achieves <b>99%+ parameter reduction</b> — trains just <b>6.14M–12.9M parameters</b> vs. full 860M model<br/>
+• Runs for <b>30 epochs</b> with AdamW optimization; saves checkpoints (~25–52 MB) every 500 steps<br/>
+• Total training time: <b>2.2–4.0 minutes</b> depending on method<br/><br/>
+<img src="Images/P02.5 - ModelTrainingParameters.png" alt="Model Training Parameters" style="width:100%;height:auto;border-radius:8px;display:block;margin:16px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Model Training parameters</p>`
+        },
+        {
+          title: 'Results',
+          content: `<b>Performance Summary:</b><br/>
+• <b>DoRA r=64</b> — best training loss (0.1246), most stable curves, perfect Madhubhani feature capture<br/>
+• <b>LoRA r=32</b> — fastest option (2.2 min, 25 MB), best for rapid prototyping<br/>
+• <b>HyperLoRA</b> — impractical: 4x more parameters, unstable training<br/>
+• DoRA's superior quality justifies the <b>40% longer training time</b> for production use<br/><br/>
+<img src="Images/P02.6 - ModelPerformanceComparison.png" alt="Performance Comparison" style="width:100%;height:auto;border-radius:8px;display:block;margin:16px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Performance Comparison</p>
+<b>Dataset Size Impact:</b><br/>
+• <b>10 images</b> — model memorized dataset; only 3–4 repetitive patterns produced<br/>
+• <b>20 images</b> — minimum for acceptable generalization; solid borders, reasonable diversity<br/>
+• <b>50 images</b> — professional museum-grade results with <b>6.9x greater stability</b><br/><br/>
+<img src="Images/P02.7 - DatasetSizeImpact.png" alt="Dataset Size Impact" style="width:100%;height:auto;border-radius:8px;display:block;margin:16px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Dataset Size Impact</p>
+<b>Model Comparison — SD v3 vs SD v1.5:</b><br/>
+• <b>SD v3</b> (newer model) actually <b>performed worse</b> — produced Westernized "Indian-style" clip art<br/>
+• Lacked traditional <b>double-line borders</b> and authentic geometric precision<br/>
+• <b>SD v1.5 + DoRA r=64</b> achieved perfect traditional style with culturally appropriate details<br/><br/>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 6px;align-items:start;"><div style="display:flex;flex-direction:column;"><img src="Images/P02.9 - SDV3_GeneratedImage.png" alt="SD V3" style="width:100%;height:auto;border-radius:8px;display:block;"/><p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">SD V3</p></div><div style="display:flex;flex-direction:column;"><img src="Images/P02.8 - SDV1.5_GeneratedImage.png" alt="SD V1.5" style="width:100%;height:auto;border-radius:8px;display:block;"/><p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">SD V1.5</p></div><div style="display:flex;flex-direction:column;"><img src="Images/P02.10 - SDV1.5 + Dora64_GeneratedImage.jpg" alt="SD v1.5 + Dora 64" style="width:100%;height:auto;border-radius:8px;display:block;"/><p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">SD v1.5 + DoRA-64</p></div></div>`
         },
         {
           title: 'User Study',
-          content: `Conducted participatory design sessions with 8 Madhubhani artists and 15 cultural heritage scholars. 
-          Key insights: artists valued the tool for pedagogical use, scholars saw potential for digital archives, 
-          and both groups emphasized the need for attribution frameworks when AI generates culturally-specific art.`
+          content: `<b>Study Overview:</b><br/>
+• Models evaluated via <b>blind user studies</b> assessing authenticity and art precision<br/>
+• <b>DoRA r=64</b> produced the most authentic outputs across all configurations<br/>
+• <b>20 images</b> confirmed as the minimum threshold for generalization; 50 images = professional quality<br/>
+• Research acknowledges AI's limitations in capturing <b>cultural and socio-religious meaning</b><br/><br/>
+<b>Study 1 — Authenticity Assessment:</b><br/>
+• <b>N = 5 participants</b><br/>
+• <b>Method:</b> Blind evaluation of 10 generated images vs. 10 authentic Madhubhani paintings, rated on a <b>(1–5) Likert scale</b> for authenticity<br/>
+• DoRA r=64: <b>4.3/5</b> — highest authenticity score across all models<br/>
+• Base SD v1.5: <b>1.8/5</b> — described as "generic Indian-style clipart lacking cultural depth"<br/>
+• Base SD v3: <b>2.4/5</b> — "Westernized interpretation missing traditional elements"<br/>
+• Only fine-tuned models captured double-line borders accurately (<b>0% in base models</b>)<br/><br/>
+<b>Study 2 — Dataset Size Impact on Art Perception:</b><br/>
+• <b>N = 5 participants</b> (same as Study 1)<br/>
+• <b>Method:</b> Blind comparison of models trained on 10, 20, and 50 images, rated on a <b>(1–5) Likert scale</b> for art precision<br/>
+• 10-image models: <b>2.3/5</b> — "Repetitive patterns, memorization evident"<br/>
+• 20-image models: <b>3.8/5</b> — "Acceptable, reasonable pattern diversity"<br/>
+• 50-image models: <b>4.4/5</b> — "Professional quality, rich geometric complexity"<br/>
+• <b>20 images</b> identified as the tipping point — below this, clear memorization and style collapse`
+        },
+        {
+          title: 'Limitations & Ethical Considerations',
+          content: `<b>Technical Limitations:</b><br/>
+• Models learn visual aesthetics but <b>not socio-religious</b> meaning behind motifs<br/>
+• Creative <b>flexibility limited</b> by training composition diversity (only 50 images)<br/>
+• <b>Hardware sensitivity</b> — HyperLoRA required full Float32 precision to avoid gradient instability<br/><br/>
+<b>Ethical Considerations:</b><br/>
+• AI should complement, <b>not replace</b>, traditional artists and their livelihoods<br/>
+• Outputs should be used respectfully for <b>educational purposes</b> only<br/>
+• <b>Attribution</b> to Madhubhani tradition is essential in all generated content`
         },
         {
           title: 'Visual Results',
-          content: `Generated images successfully reproduced hallmark features: geometric borders, natural pigment color palettes, 
-          double-line figures, and the distinctive flat perspective of traditional Madhubhani work. 
-          Failure cases clustered around complex multi-figure compositions and ceremonial scenes.`
+          content: `<b>Prompt 1 — Elephant:</b><br/>
+• "madhubani art painting, sacred elephant adorned with traditional jewelry and decorative patterns, bold outlines, vibrant red blue yellow green, folk art motifs"<br/><br/>
+<img src="Images/P02.11 - GeneratedImage_DifferentModels.png" alt="Generated images — different fine-tuning methods" style="width:100%;height:auto;border-radius:8px;display:block;margin:12px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:4px;">Generated Madhubhani art — different fine-tuning methods</p><br/>
+<p style="font-size:16px;color:var(--charcoal);margin-bottom:4px;"><b>Top row:</b> Base SD v1.5 (7.9s) · LoRA r=32 (1.4s) · LoRA r=64 (1.3s) · LoRA r=128 (1.3s)</p><br/>
+<p style="font-size:16px;color:var(--charcoal);margin-bottom:20px;"><b>Bottom row:</b> DoRA r=16 (1.4s) · DoRA r=32 (1.4s) · DoRA r=64 (1.3s) · HyperLoRA r=8 (1.4s)</p><br/>
+<b>Prompt 2 — Peacock:</b><br/>
+• "madhubani art painting, majestic peacock with ornate tail feathers, intricate geometric patterns, bold black outlines, vibrant red yellow blue green colors, traditional indian folk art"<br/><br/>
+<img src="Images/P02.12 - GeneratedImage_DifferentDatasetSize.png" alt="Generated images — different dataset sizes" style="width:100%;height:auto;border-radius:8px;display:block;margin:12px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:4px;">Generated Madhubhani art — different dataset sizes</p><br/>
+<p style="font-size:16px;color:var(--charcoal);margin-bottom:4px;"><b>Top row:</b> LoRA r=32 size=10 (1.7s) · LoRA r=32 size=20 (1.5s) · LoRA r=32 size=50 (1.9s)</p><br/>
+<p style="font-size:16px;color:var(--charcoal);margin-bottom:20px;"><b>Bottom row:</b> DoRA r=32 size=10 (1.6s) · DoRA r=32 size=20 (1.5s) · DoRA r=32 size=50 (1.6s)</p><br/>
+<div style="background:var(--warm-white);border:1px solid var(--border);border-radius:10px;padding:18px 22px;">Cultural heritage preservation doesn't need massive compute or the latest models. <b>Smart, domain-specific fine-tuning on carefully curated datasets wins every time.</b> We can preserve 2,500-year-old traditions with tools that cost pennies and run on modest hardware!</div>`
         }
       ]
     },
@@ -1314,16 +1410,16 @@
         {
           title: 'The Problem Space',
           open: true,
-          content: `Food and cosmetic product ingredient lists are notoriously difficult for consumers to parse. 
-          Chemical names, regulatory jargon, and lack of context make informed purchasing decisions hard — 
-          especially for people with allergies, dietary restrictions, or specific health goals.`
+          content: `<b>Food and cosmetic product ingredient lists</b> are notoriously difficult for consumers to parse.
+          <b>Chemical names, regulatory jargon</b>, and lack of context make informed purchasing decisions hard —
+          especially for people with <b>allergies, dietary restrictions, or specific health goals</b>.`
         },
         {
           title: 'System Architecture',
-          content: `The system combines: (1) OCR for ingredient text extraction from product photos, 
-          (2) an LLM (Claude-based) for natural language explanation of each ingredient, 
-          (3) a nutrition/toxicology knowledge base for fact-grounding, and 
-          (4) a personalization layer that filters by user-defined health preferences.`
+          content: `The system combines: (1) <b>OCR for ingredient text extraction</b> from product photos,
+          (2) an <b>LLM (Claude-based)</b> for natural language explanation of each ingredient,
+          (3) a <b>nutrition/toxicology knowledge base</b> for fact-grounding, and
+          (4) a <b>personalization layer</b> that filters by user-defined health preferences.`
         },
         {
           title: 'Research Questions',
@@ -1333,21 +1429,21 @@
         },
         {
           title: 'Technical Model Comparison',
-          content: `Evaluated GPT-4V, Claude 3 Sonnet, and LLaVA-1.6 on a benchmark of 500 ingredient lists. 
-          Claude 3 Sonnet achieved the highest factual accuracy (91.3%) and lowest hallucination rate (4.2%). 
-          OCR accuracy on curved/glossy packaging was the primary bottleneck across all models.`
+          content: `Evaluated <b>GPT-4V, Claude 3 Sonnet, and LLaVA-1.6</b> on a benchmark of <b>500 ingredient lists</b>.
+          <b>Claude 3 Sonnet</b> achieved the highest <b>factual accuracy (91.3%)</b> and lowest <b>hallucination rate (4.2%)</b>.
+          OCR accuracy on <b>curved/glossy packaging</b> was the primary bottleneck across all models.`
         },
         {
           title: 'Technology Stack',
-          content: `Frontend: React Native · Backend: FastAPI (Python) · LLM: Claude API · 
-          OCR: Tesseract + GPT-4V fallback · Database: PostgreSQL + pgvector · 
-          Deployment: AWS Lambda + S3 · Auth: Auth0`
+          content: `<b>Frontend:</b> React Native · <b>Backend:</b> FastAPI (Python) · <b>LLM:</b> Claude API ·
+          <b>OCR:</b> Tesseract + GPT-4V fallback · <b>Database:</b> PostgreSQL + pgvector ·
+          <b>Deployment:</b> AWS Lambda + S3 · <b>Auth:</b> Auth0`
         },
         {
           title: 'Data Flow Pipeline',
-          content: `Image capture → Pre-processing (contrast, rotation) → OCR extraction → 
-          Ingredient segmentation → LLM enrichment per ingredient → 
-          Personalization filter → Structured JSON response → React Native rendering`
+          content: `<b>Image capture</b> → Pre-processing (contrast, rotation) → <b>OCR extraction</b> →
+          <b>Ingredient segmentation</b> → <b>LLM enrichment</b> per ingredient →
+          <b>Personalization filter</b> → Structured JSON response → <b>React Native rendering</b>`
         }
       ]
     },
@@ -1358,11 +1454,11 @@
         {
           title: 'Overview',
           open: true,
-          content: 'An adaptive traffic signal system combining IoT sensors and ML-based pedestrian detection to extend crossing time and provide audio cues for blind and visually impaired pedestrians.'
+          content: 'An <b>adaptive traffic signal system</b> combining <b>IoT sensors</b> and <b>ML-based pedestrian detection</b> to extend crossing time and provide <b>audio cues</b> for blind and visually impaired pedestrians.'
         },
         {
           title: 'Research Approach',
-          content: 'Conducted field studies at 6 intersections across 3 cities. Shadowed BVI participants during real crossing scenarios to identify pain points with existing pedestrian infrastructure.'
+          content: 'Conducted <b>field studies</b> at <b>6 intersections across 3 cities</b>. Shadowed <b>BVI participants</b> during real crossing scenarios to identify <b>pain points</b> with existing pedestrian infrastructure.'
         }
       ]
     },
@@ -1373,11 +1469,11 @@
         {
           title: 'Overview',
           open: true,
-          content: 'A comprehensive UX research project examining how patients interact with digital health platforms, culminating in redesign recommendations that prioritize trust, health literacy, and accessibility.'
+          content: 'A comprehensive <b>UX research project</b> examining how patients interact with <b>digital health platforms</b>, culminating in <b>redesign recommendations</b> that prioritize <b>trust, health literacy, and accessibility</b>.'
         },
         {
           title: 'Methodology',
-          content: 'Mixed-methods study: 42 semi-structured interviews, diary studies over 3 weeks, and a quantitative survey (n=312). Participants ranged from digital natives to older adults with limited tech experience.'
+          content: '<b>Mixed-methods study</b>: <b>42 semi-structured interviews</b>, <b>diary studies over 3 weeks</b>, and a <b>quantitative survey (n=312)</b>. Participants ranged from <b>digital natives</b> to <b>older adults with limited tech experience</b>.'
         }
       ]
     },
@@ -1388,11 +1484,11 @@
         {
           title: 'Overview',
           open: true,
-          content: 'A deep learning pipeline for automated classification and analysis of Raman spectroscopy signals to identify pigments and materials in Madhubhani and other Indian folk art artifacts.'
+          content: 'A <b>deep learning pipeline</b> for automated <b>classification and analysis</b> of <b>Raman spectroscopy signals</b> to identify pigments and materials in Madhubhani and other Indian folk art artifacts.'
         },
         {
           title: 'Technical Approach',
-          content: 'Used 1D-CNN architecture trained on a dataset of 3,200 spectra across 48 pigment classes. Achieved 94.7% top-1 accuracy. Integrated with a React-based web interface for use by non-technical conservators.'
+          content: 'Used <b>1D-CNN architecture</b> trained on a dataset of <b>3,200 spectra across 48 pigment classes</b>. Achieved <b>94.7% top-1 accuracy</b>. Integrated with a <b>React-based web interface</b> for use by <b>non-technical conservators</b>.'
         }
       ]
     }
@@ -1414,24 +1510,19 @@
     // Pre-pass: mark grouped bullets and assign accent index per heading
     const isGrouped = new Array(parsed.length).fill(false);
     const accentIdx = new Array(parsed.length).fill(0);
-    let headingCount = 0;
 
     for (let i = 0; i < parsed.length; i++) {
       if (/^<b>[^<]+:<\/b>$/.test(parsed[i])) {
-        accentIdx[i] = headingCount % ACCENTS.length;
         let j = i + 1;
         while (j < parsed.length && parsed[j].startsWith('•')) {
           isGrouped[j] = true;
-          accentIdx[j] = headingCount % ACCENTS.length;
           j++;
         }
-        headingCount++;
       }
     }
 
     let html = '';
     let idx = 0;
-    let standaloneAccent = 0;
 
     lines.forEach(line => {
       const trimmed = line.trim();
@@ -1447,41 +1538,39 @@
       if (/^<b>[^<]+:<\/b>$/.test(trimmed)) {
         html += `<div style="display:flex;align-items:center;gap:10px;margin:22px 0 8px;">
           <span style="display:inline-block;width:3px;height:16px;background:${A.bar};border-radius:2px;flex-shrink:0;"></span>
-          <span style="font-family:'Poppins',sans-serif;font-size:11.5px;font-weight:700;color:${A.text};letter-spacing:0.07em;text-transform:uppercase;">${trimmed.replace(/<\/?b>/g,'')}</span>
+          <span style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;color:${A.text};letter-spacing:0.01em;">${trimmed.replace(/<\/?b>/g,'')}</span>
         </div>`;
       }
       // Grouped bullet — compact inline
       else if (trimmed.startsWith('•') && grouped) {
         const content = trimmed.slice(1).trim();
         html += `<div style="display:flex;align-items:baseline;gap:9px;padding:4px 0 4px 4px;">
-          <span style="color:${A.bar};font-size:13px;flex-shrink:0;margin-top:2px;">›</span>
-          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.75;">${content}</span>
+          <span style="color:${A.bar};font-size:18px;flex-shrink:0;margin-top:2px;">›</span>
+          <span style="font-size:18px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
-      // Standalone bullet — card style, cycle accent
+      // Standalone bullet — card style, single accent
       else if (trimmed.startsWith('•')) {
-        const SA = ACCENTS[standaloneAccent % ACCENTS.length];
-        standaloneAccent++;
+        const SA = ACCENTS[0];
         const content = trimmed.slice(1).trim();
         html += `<div style="display:flex;align-items:flex-start;gap:10px;margin:7px 0;padding:10px 14px;background:${SA.bullet_bg};border-radius:8px;border-left:3px solid ${SA.bullet_border};">
-          <span style="color:${SA.bar};font-size:16px;line-height:1.4;flex-shrink:0;">›</span>
-          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.72;">${content}</span>
+          <span style="color:${SA.bar};font-size:20px;line-height:1.4;flex-shrink:0;">›</span>
+          <span style="font-size:18px;color:var(--charcoal);line-height:1.72;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
       // Numbered lines — cycle accent
       else if (/^\d+\./.test(trimmed)) {
         const num = trimmed.match(/^(\d+)\./)[1];
-        const numIdx = (parseInt(num) - 1) % ACCENTS.length;
-        const NA = ACCENTS[numIdx];
+        const NA = ACCENTS[0];
         const content = trimmed.replace(/^\d+\.\s*/, '');
-        html += `<div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:12px 16px;background:${NA.num_card};border-radius:8px;border:1px solid ${NA.num_border};">
+        html += `<div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:12px 16px;background:${NA.bullet_bg};border-radius:8px;border-left:3px solid ${NA.bullet_border};">
           <span style="background:${NA.num_bg};color:#fff;font-size:11px;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'Poppins',sans-serif;">${num}</span>
-          <span style="font-size:13.5px;color:var(--charcoal);line-height:1.75;">${content}</span>
+          <span style="font-size:18px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
       // Regular paragraph
       else {
-        html += `<p style="font-size:13.5px;color:var(--charcoal);line-height:1.85;margin-bottom:6px;">${trimmed}</p>`;
+        html += `<p style="font-size:18px;color:var(--charcoal);line-height:1.85;margin-bottom:6px;text-align:justify;font-weight:300;">${trimmed}</p>`;
       }
     });
     return html;
