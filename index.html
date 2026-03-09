@@ -156,7 +156,7 @@
   .bio-dot { display: none; }
 
   .bio-text {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--charcoal);
     line-height: 1.75;
     text-align: justify;
@@ -190,7 +190,7 @@
   }
 
   .contact-card h4 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-transform: none;
@@ -507,7 +507,7 @@
     max-height: 0; overflow: hidden;
     transition: max-height 0.45s ease, padding 0.3s;
     background: #fff;
-    font-size: 18px; color: var(--charcoal); line-height: 1.85; font-weight: 300;
+    font-size: 16px; color: var(--charcoal); line-height: 1.85; font-weight: 300;
   }
 
   .collapsible.open .collapsible-body {
@@ -621,7 +621,7 @@
   .exp-role a { color: var(--rust); }
 
   .exp-company-line {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--muted);
     margin-bottom: 20px;
     font-weight: 300;
@@ -636,7 +636,7 @@
   }
 
   .exp-bullets li {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--charcoal);
     line-height: 1.65;
     padding-left: 14px;
@@ -662,7 +662,7 @@
   }
 
   .exp-skills-label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -671,7 +671,7 @@
   }
 
   .exp-skill-row {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--charcoal);
     line-height: 1.7;
     margin-bottom: 2px;
@@ -738,6 +738,7 @@
   .project-card:nth-child(4) { animation-delay: 0.26s; }
   .project-card:nth-child(5) { animation-delay: 0.33s; }
   .project-card:nth-child(6) { animation-delay: 0.40s; }
+  .project-card:nth-child(7) { animation-delay: 0.47s; }
 
   .exp-item:nth-child(1) { animation-delay: 0.05s; }
   .exp-item:nth-child(2) { animation-delay: 0.12s; }
@@ -871,6 +872,24 @@
     </div>
 
     <!-- Card 2 -->
+    <div class="project-card" onclick="openProject('llm')">
+      <div class="card-thumb" style="background:#b8d0e0;padding:0;overflow:hidden;">
+        <img src="Images/P03-Proj3_thumnail.png" alt="Multi-modal Ingredient Analyzer" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="card-category">AI · NLP</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment</h3>
+        <p class="card-desc">A multimodal AI tool that analyzes product ingredient lists via image and text to provide accessible health insights for consumers.</p>
+        <div class="card-tags">
+          <span class="tag">LLM</span>
+          <span class="tag">Multimodal</span>
+          <span class="tag">Health Tech</span>
+        </div>
+        <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
     <div class="project-card" onclick="openProject('madhubhani')">
       <div class="card-thumb" style="background:#e8c5a0;padding:0;overflow:hidden;">
         <img src="Images/P02.1-Proj_2_thumnail.jpg" alt="Madhubhani AI" style="width:100%;height:100%;object-fit:cover;display:block;"/>
@@ -888,28 +907,28 @@
       </div>
     </div>
 
-    <!-- Card 3 -->
-    <div class="project-card" onclick="openProject('llm')">
-      <div class="card-thumb" style="background: linear-gradient(135deg,#dde8f0,#b8d0e0);">
-        <span class="card-thumb-emoji">🧠</span>
-        <span class="card-category">AI · NLP</span>
+    <!-- Card 4 -->
+    <div class="project-card" onclick="openProject('teachu')">
+      <div class="card-thumb" style="background:#c8e6d4;padding:0;overflow:hidden;">
+        <img src="Images/P04.1-Proj_4_thumnail.jpg" alt="TeachU Personal Tutor" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <span class="card-category">AI · EdTech · Hackathon</span>
       </div>
       <div class="card-body">
-        <h3 class="card-title">Multi-modal Ingredient Analyser: AI-Driven Consumer Empowerment</h3>
-        <p class="card-desc">A multimodal AI tool that analyzes product ingredient lists via image and text to provide accessible health insights for consumers.</p>
+        <h3 class="card-title">TeachU: Your Personal AI Tutor at Your Fingertips</h3>
+        <p class="card-desc">A hackathon-built AI tutoring system that transforms any learning material into personalized, multilingual video explanations using RAG, LLM agents, and character video generation.</p>
         <div class="card-tags">
-          <span class="tag">LLM</span>
-          <span class="tag">Multimodal</span>
-          <span class="tag">Health Tech</span>
+          <span class="tag">RAG</span>
+          <span class="tag">ElevenLabs</span>
+          <span class="tag">EdTech</span>
         </div>
         <span class="card-btn">View Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
     </div>
 
-    <!-- Card 4 (hidden initially) -->
+    <!-- Card 5 (hidden initially) -->
     <div class="project-card hidden" onclick="openProject('transit')">
-      <div class="card-thumb" style="background: linear-gradient(135deg,#e8e0f0,#c8b8e0);">
-        <span class="card-thumb-emoji">🚦</span>
+      <div class="card-thumb" style="background:#c8b8e0;padding:0;overflow:hidden;">
+        <img src="Images/Proj_4_thumnail.jpg" alt="Torch Optimizer" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         <span class="card-category">UX · Accessibility</span>
       </div>
       <div class="card-body">
@@ -926,8 +945,8 @@
 
     <!-- Card 5 (hidden) -->
     <div class="project-card hidden" onclick="openProject('health')">
-      <div class="card-thumb" style="background: linear-gradient(135deg,#e0f0e8,#b8e0c8);">
-        <span class="card-thumb-emoji">🏥</span>
+      <div class="card-thumb" style="background:#b8e0c8;padding:0;overflow:hidden;">
+        <img src="Images/Proj_5_thumnail.png" alt="Health & Your Brand" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         <span class="card-category">Health · UX</span>
       </div>
       <div class="card-body">
@@ -944,8 +963,8 @@
 
     <!-- Card 6 (hidden) -->
     <div class="project-card hidden" onclick="openProject('spectro')">
-      <div class="card-thumb" style="background: linear-gradient(135deg,#f0e8d8,#e0c8a0);">
-        <span class="card-thumb-emoji">📊</span>
+      <div class="card-thumb" style="background:#e0c8a0;padding:0;overflow:hidden;">
+        <img src="Images/Proj_6_thumnail.png" alt="FerroFlow" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         <span class="card-category">ML · Spectrometry</span>
       </div>
       <div class="card-body">
@@ -1127,9 +1146,9 @@
           • <b>6 vibration motors</b> strategically placed at the four corners and two mid-points of the smartphone back<br/>
           • Motors tested across 3 types: Cylindrical (BC337 transistors, 1N4001 diodes), ERM Coin Motors (compact form), and Coreless DC Motors (highest precision & tactile clarity)<br/><br/>
           <img src="Images/P01.3 - Hardware_setup.jpg" alt="Hardware Setup" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Hardware Setup</p>
           <img src="Images/P01.4 - MotorPlacement.jpg" alt="Motor Placement" style="width:35%;border-radius:8px;display:block;margin:0 auto 6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Motor Placement</p>
           <b>Motor placement design rationale:</b><br/>
           • Maximizes spatial differentiation between tactile zones<br/>
           • Ensures comprehensive device coverage<br/>
@@ -1147,9 +1166,9 @@
           • Arduino ESP32 hosted a <b>browser-based controller</b> to send directional commands and adjust vibration intensity (0–255)<br/>
           • PWM signals used for precise, software-configurable haptic control<br/><br/>
           <img src="Images/P01.5 - WebBrowser.png" alt="Web Browser Controller" style="width:100%;border-radius:8px;display:block;margin:16px 0 6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Web Controller</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 6px;width:60%;margin-left:auto;margin-right:auto;"><img src="Images/P01.6 - PhoneApp.jpeg" alt="Phone App" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Command Control Design" style="width:100%;border-radius:8px;display:block;"/></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;width:60%;margin-left:auto;margin-right:auto;"><span style="font-size:18px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:18px;color:var(--muted);text-align:center;">Command Control</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;width:60%;margin-left:auto;margin-right:auto;"><span style="font-size:16px;color:var(--muted);text-align:center;">Phone App</span><span style="font-size:16px;color:var(--muted);text-align:center;">Command Control</span></div>
           <b>Why Wizard-of-Oz?</b><br/>
           • Allowed realistic testing of the full interaction experience before the AI directional model was fully built<br/>
           • A researcher operated the web controller in real time while participants completed navigation tasks`
@@ -1179,15 +1198,15 @@
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 6px;align-items:start;">
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.9 - PageDesign_CommandControl.png" alt="Web browser controller interface" style="width:100%;height:auto;border-radius:8px;display:block;"/>
-              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Web browser controller interface</p>
+              <p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">Web browser controller interface</p>
             </div>
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.10 - UserStudySetup.jpeg" alt="Prototypes setup for the user study" style="width:100%;height:auto;border-radius:8px;display:block;"/>
-              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Prototypes setup for the user study</p>
+              <p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">Prototypes setup for the user study</p>
             </div>
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.11 - Participant_Userstudy1.jpeg" alt="Participant during the user study" style="width:100%;height:auto;border-radius:8px;display:block;"/>
-              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;">Participant during the user study</p>
+              <p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;">Participant during the user study</p>
             </div>
           </div>
           <b>Results:</b><br/>
@@ -1198,15 +1217,15 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 16px;align-items:center;">
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.12 - MotorSuccess.png" alt="Motor Success Rate" style="width:100%;border-radius:8px;display:block;"/>
-              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Motor Performance: Success Rate</p>
+              <p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Motor Performance: Success Rate</p>
             </div>
             <div style="display:flex;flex-direction:column;">
               <img src="Images/P01.13 - GripSuccess.png" alt="Grip Success Rate" style="width:100%;border-radius:8px;display:block;"/>
-              <p style="font-size:18px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Grip Posture: Success Rate</p>
+              <p style="font-size:16px;color:var(--muted);text-align:center;margin-top:6px;margin-bottom:0;">Grip Posture: Success Rate</p>
             </div>
           </div>
           <img src="Images/P01.14 - DirectSuccess.png" alt="Directional Success Rate" style="width:100%;border-radius:8px;display:block;margin-bottom:6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Direction Success Rate</p>
           <b>Qualitative Ratings (1–5 scale):</b><br/>
           • Cylindrical scored highest overall (4.1–4.5), especially in "Comfortable to Use" (4.5) and "Overall Preference" (4.2)<br/>
           • Flat motor performed well (4.0–4.3); Cuboid scored lowest on "Clarity of Feedback" (3.3) and "Overall Preference" (3.4)<br/>
@@ -1222,9 +1241,9 @@
           • 60 trials per condition; metrics: task duration and number of actions per trial<br/><br/>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 16px;"><img src="Images/P01.16 - UserStdy2_Setup.jpg" alt="User Study 2 Setup" style="width:100%;border-radius:8px;display:block;"/><img src="Images/P01.17 - Participant_UserStudy2.jpg" alt="Participant Study 2" style="width:100%;border-radius:8px;display:block;filter:brightness(0.75);"/><img src="Images/P01.18 - Participant2_UserStudy2.jpg" alt="Participant 2 Study 2" style="width:100%;border-radius:8px;display:block;"/></div>
           <img src="Images/P01.19 - Qual_UserStudy2.png" alt="Qualitative Results Study 2" style="width:70%;border-radius:8px;display:block;margin:16px auto 6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Qualitative analysis of Task Duration</p>
           <img src="Images/P01.20 - ErrorAccuracy_UserStudy2.png" alt="Error Accuracy Study 2" style="width:70%;border-radius:8px;display:block;margin:0 auto 6px;"/>
-          <p style="font-size:18px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
+          <p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">Error vs Accuracy rate across the participants</p>
           <b>Results:</b><br/>
           • <b>Audio</b> feedback was fastest — mean duration: <b>17,220 ms</b><br/>
           • <b>Haptic</b> feedback was slower — mean duration: <b>45,267 ms</b> — but provided directional precision audio could not<br/>
@@ -1265,12 +1284,14 @@
         {
           title: 'Overview',
           open: true,
-          content: `<img src="Images/P02.1-Proj_2_thumnail.jpg" alt="Madhubhani AI Overview" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:16px 20px;margin-bottom:20px;"><span style="font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;">Research Question</span><span style="font-size:18px;color:var(--charcoal);line-height:1.75;font-weight:300;">Can <b>Parameter-Efficient Fine-Tuning (PEFT)</b> on diffusion models generate culturally faithful Madhubhani artwork that preserves the <b>visual grammar</b> of this endangered folk art tradition?</span></div><br/>
+          content: `<img src="Images/P02.1-Proj_2_thumnail.jpg" alt="Madhubhani AI Overview" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:16px 20px;margin-bottom:20px;"><span style="font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;">Research Question</span><span style="font-size:16px;color:var(--charcoal);line-height:1.75;font-weight:300;">Can <b>Parameter-Efficient Fine-Tuning (PEFT)</b> on diffusion models generate culturally faithful Madhubhani artwork that preserves the <b>visual grammar</b> of this endangered folk art tradition?</span></div><br/>
 <b>What this project addresses:</b><br/>
 • <b>Madhubhani painting</b> is a centuries-old folk art tradition from the <b>Mithila region of Bihar, India</b><br/>
 • With practitioners aging and fewer young artists continuing the tradition, the art form risks <b>cultural extinction</b><br/>
 • This project uses <b>AI to document, analyze, and generate</b> authentic Madhubhani-style artwork — preserving its <b>visual grammar</b> for future generations<br/>
-• Impact: enables <b>digital preservation, artist education,</b> and cultural archiving of Madhubhani art at scale`
+• Impact: enables <b>digital preservation, artist education,</b> and cultural archiving of Madhubhani art at scale<br/><br/>
+<img src="Images/02 - madhubani-paintings-proj_2.webp" alt="Authentic Madhubhani Paintings" style="width:100%;height:auto;border-radius:10px;display:block;margin:4px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:4px;">Authentic Madhubhani paintings — the centuries-old visual tradition this project aims to preserve</p>`
         },
         {
           title: 'Model Training and Results',
@@ -1405,45 +1426,169 @@
     },
     llm: {
       tag: 'AI · NLP · Consumer Health',
-      title: 'Multi-modal Ingredient Analyser: AI-Driven Consumer Empowerment',
+      title: 'Multi-modal Ingredient Analyzer: AI-Driven Consumer Empowerment',
       sections: [
         {
-          title: 'The Problem Space',
+          title: 'Overview',
           open: true,
-          content: `<b>Food and cosmetic product ingredient lists</b> are notoriously difficult for consumers to parse.
-          <b>Chemical names, regulatory jargon</b>, and lack of context make informed purchasing decisions hard —
-          especially for people with <b>allergies, dietary restrictions, or specific health goals</b>.`
+          content: `<img src="Images/P03-Proj3_thumnail.png" alt="Multi-modal Ingredient Analyzer" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:16px 20px;margin-bottom:20px;"><span style="font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;">Research Question</span><span style="font-size:16px;color:var(--charcoal);line-height:1.75;font-weight:300;">Can <b>multimodal large language models</b> effectively extract and interpret ingredient information from product label photos — providing consumers with <b>accurate, accessible, and real-time insights</b> to support informed purchasing decisions?</span></div><br/>
+<b>What this project addresses:</b><br/>
+• <b>84.2% of ingredient lists</b> require a 10th-grade reading level or higher — making them inaccessible to most consumers<br/>
+• Consumers spend an average of <b>5–10 minutes</b> manually searching each unfamiliar ingredient online<br/>
+• People with <b>dietary restrictions, allergies, or specific health goals</b> face the highest risk from unreadable labels<br/>
+• This tool uses <b>AI vision + web search</b> to deliver instant, verified ingredient breakdowns in plain language`
         },
         {
-          title: 'System Architecture',
-          content: `The system combines: (1) <b>OCR for ingredient text extraction</b> from product photos,
-          (2) an <b>LLM (Claude-based)</b> for natural language explanation of each ingredient,
-          (3) a <b>nutrition/toxicology knowledge base</b> for fact-grounding, and
-          (4) a <b>personalization layer</b> that filters by user-defined health preferences.`
+          title: 'Problem Space & Motivation',
+          content: `<b>The Challenge:</b><br/>
+• <b>Complex chemical terminology</b> — ingredient names like "sodium benzoate" or "carrageenan" are opaque to most shoppers<br/>
+• <b>Scattered, unreliable sources</b> — searching individual ingredients takes time and yields inconsistent results<br/>
+• <b>In-store time pressure</b> — consumers rarely have 5–10 minutes per product while shopping<br/>
+• <b>Dietary compatibility uncertainty</b> — unclear whether a product is vegan, gluten-free, halal, or kosher<br/><br/>
+<img src="Images/P03.1-IngredientList.webp" alt="Sample Ingredient List" style="width:70%;height:auto;border-radius:8px;display:block;margin:12px auto 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">A typical product ingredient list — dense, technical, and difficult to interpret</p>
+<b>The Evidence:</b><br/>
+• IFIC: <b>30% of consumers</b> are paying more attention to ingredient lists than 5 years ago<br/>
+• USDA Food Data Central: analysis of <b>495,646 products</b> revealed low readability scores across ingredient lists<br/>
+• Purdue Agriculture: consumers tend to <b>trust food labels</b> — making accuracy of AI analysis critically important<br/>
+• Prior OCR-based systems achieved only <b>84% accuracy</b> — insufficient for health-critical decisions`
         },
         {
           title: 'Research Questions',
-          content: `• Can LLMs accurately explain ingredients with sufficient nuance for health-conscious consumers?
-          • How do users with different health literacy levels interact with AI-generated ingredient explanations?
-          • What UI patterns best support trust-calibration in AI health information systems?`
+          content: `<b>This project investigated four core questions:</b><br/><br/>
+1. <b>Extraction Accuracy:</b> Can AI-powered multimodal analysis effectively <b>extract and interpret</b> ingredient information from product label photos?<br/><br/>
+2. <b>Time Efficiency:</b> How quickly can users access accurate ingredient information <b>compared to manual web research</b>?<br/><br/>
+3. <b>User Expectations:</b> What <b>level of accuracy and detail</b> do users expect from an automated ingredient analyzer?<br/><br/>
+4. <b>Model Selection:</b> Which large language model provides the <b>optimal balance of speed and accuracy</b> for real-world ingredient analysis?`
+        },
+        {
+          title: 'System Architecture',
+          content: `<b>Layer 1: User Interaction (Streamlit Frontend):</b><br/>
+• <b>Image Input:</b> Upload existing photos from device or capture a live image via camera<br/>
+• <b>Image Storage:</b> Temporary secure storage — images processed immediately and not retained<br/>
+• <b>Interactive Query:</b> Follow-up questions about specific ingredients answered in real time<br/>
+• <b>Results Display:</b> Clear, structured visualization of ingredient analysis and health insights<br/><br/>
+<b>Layer 2: Backend Processing (Phidata Agent):</b><br/>
+• <b>Gemini 2.0 Flash LLM:</b> Multimodal text extraction and ingredient interpretation from images<br/>
+• <b>Tavily Search API:</b> Real-time web verification — each ingredient fact-checked against current sources<br/>
+• <b>System Prompts:</b> Behavioral configuration defines the agent's role, tone, and analysis depth<br/>
+• <b>Response Generation:</b> Context-aware synthesis of extracted data, search results, and user query<br/><br/>
+<img src="Images/P03.10-SystemArchitecture.png" alt="System Architecture" style="width:100%;height:auto;border-radius:8px;display:block;margin:16px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Complete system architecture — Streamlit frontend connected to Phidata agent backend</p>
+<img src="Images/P03.15-TheFinalAPplication.png" alt="Final Application Interface" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">The final deployed application interface</p>`
+        },
+        {
+          title: 'Technology Stack & System Prompt',
+          content: `<b>Technology Stack:</b><br/>
+• <b>Frontend:</b> Streamlit (Python) — open-source framework for interactive web applications<br/>
+• <b>Image Processing:</b> Pillow (PIL) — image handling and preprocessing<br/>
+• <b>Agent Framework:</b> Phidata — AI orchestration and tool integration<br/>
+• <b>Primary LLM:</b> Google Gemini 2.0 Flash — multimodal vision + text model<br/>
+• <b>Search/Verification:</b> Tavily Search API — real-time web search for fact-checking<br/><br/>
+<b>Data Flow Pipeline:</b><br/>
+• <b>Stage 1 — Agent Initialization:</b> Phidata agent created with system prompt, instructions, and Tavily search tool<br/>
+• <b>Stage 2 — Image Analysis:</b> Gemini 2.0 Flash processes the uploaded image and extracts all ingredient text<br/>
+• <b>Stage 3 — Verification:</b> Each extracted ingredient is independently verified via Tavily Search API<br/>
+• <b>Stage 4 — Response Generation:</b> Agent synthesizes extraction + search results into a structured report<br/><br/>
+<img src="Images/P03.12-DataFlowPipeline.png" alt="Data Flow Pipeline" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 0;"/><span style="display:block;font-size:16px;color:var(--muted);text-align:center;margin:4px 0 20px;font-weight:300;">4-stage data flow pipeline from image input to final analysis report</span>
+<b>System Prompt Design:</b><br/>
+• Agent role defined as <b>Expert Food Product Analyst</b> specialized in ingredient analysis and nutrition science<br/>
+• Instructions guide the agent to: explain ingredients in simple language, identify additives/preservatives, check dietary restrictions, rate nutritional value (1–5 scale), highlight health implications, and suggest healthier alternatives<br/>
+• Uses Tavily Search tool for <b>evidence-based recommendations</b> grounded in current scientific sources<br/><br/>
+<img src="Images/P03.16-SystemPrompt.png" alt="System Prompt and Instructions" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:16px;">System prompt and instruction set defined for the Phidata agent</p>`
+        },
+        {
+          title: 'Research Methods',
+          content: `<b>A mixed-methods approach</b> was employed combining technical evaluation with user research.<br/><br/>
+<b>Comparative Model Analysis:</b><br/>
+• Evaluated <b>5 large language models</b>: Gemini 2.0 Flash, GPT-4 Vision, Claude 3 Sonnet, LLaVA 1.5, BLIP-2<br/>
+• Metrics measured: <b>response time</b> (seconds), extraction accuracy (precision), handling of complex ingredient lists, image quality sensitivity<br/>
+• Each model systematically replaced in the agent pipeline and tested on identical ingredient label images<br/><br/>
+<b>Usability Testing (N=12):</b><br/>
+• <b>3 participants</b> with food allergies or dietary restrictions<br/>
+• <b>7 health-conscious consumers</b> actively monitoring their diet<br/>
+• <b>2 general consumers</b> with minimal ingredient knowledge<br/>
+• Each 45-minute session: task completion, think-aloud protocol, and semi-structured interview<br/><br/>
+<b>Time-on-Task Comparison Study:</b><br/>
+• Measured <b>time efficiency</b> by comparing the tool against manual web searching for the same 10 products<br/>
+• Same 12 participants from usability testing completed both conditions<br/><br/>
+<b>Analysis Output:</b><br/>
+• Participants interacted with the two-stage output: a <b>main ingredient analysis</b> followed by the ability to ask <b>follow-up questions</b><br/><br/>
+<img src="Images/P03.17-MainAnalysisOutput.png" alt="Main Analysis Output" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:15px;color:var(--muted);text-align:center;margin-bottom:20px;">Step 1 — Main ingredient analysis</p>
+<img src="Images/P03.18-FurtherPromptOutput.png" alt="Follow-up Prompt Output" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:15px;color:var(--muted);text-align:center;margin-bottom:6px;">Step 2 — Follow-up question response</p>`
+        },
+        {
+          title: 'User Study Findings',
+          content: `<b>Study 1 — Initial Usability Testing:</b><br/>
+• <b>N = 12 participants</b> (ages 24–58, 7 female, 5 male)<br/>
+• <b>Task:</b> Upload product photo and interpret the generated ingredient analysis<br/>
+• Task completion rate: <b>100%</b> — all participants successfully uploaded images and received analysis<br/>
+• Average System Usability Scale (SUS) score: <b>82.5</b> (Grade B, indicating good usability)<br/>
+• Average time to first insight: <b>32 seconds</b> from image upload to receiving analysis<br/>
+• Feature request: <b>85% of users</b> wanted dietary filter options (vegan, kosher, halal)<br/><br/>
+<b>Participant Quote:</b><br/>
+<div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:14px 20px;margin:10px 0 20px;font-size:17px;color:var(--charcoal);line-height:1.75;font-style:italic;">"This is exactly what I need when I'm standing in the grocery store trying to figure out if I can eat something. It would usually take me 10 minutes of Googling on my phone."</div><br/>
+<b>Study 2 — Comparative Time Efficiency:</b><br/>
+• <b>N = 12 participants</b> (same as Study 1)<br/>
+• <b>Research method:</b> 10 products searched via both manual web search and the ingredient analyzer<br/>
+• Manual web search average: <b>7.3 minutes</b> per product<br/>
+• Ingredient Analyzer average: <b>3.5 seconds</b> per product<br/>
+• <b>Time saved: 95%</b> — a reduction of ~7 minutes per product<br/><br/>
+<img src="Images/P03.8-Table1.png" alt="Time Comparison Results" style="width:80%;height:auto;border-radius:8px;display:block;margin:12px auto 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Manual web search vs. Ingredient Analyzer — average time per product</p>
+<b>Study 3 — Accuracy & Trust Assessment:</b><br/>
+• <b>Expert panel:</b> n=12, compared analyzer output against expert manual analysis for 50 diverse products<br/>
+• Ingredient extraction accuracy: <b>92.4%</b> (Gemini 2.0 Flash)<br/>
+• Information accuracy: <b>89.7%</b> when verified against scientific literature<br/>
+• User trust rating: <b>4.2/5</b> after comparing results with their own research<br/>
+• Most common error: misreading similar-looking characters (e.g., 'I' vs '1') with poor image quality`
         },
         {
           title: 'Technical Model Comparison',
-          content: `Evaluated <b>GPT-4V, Claude 3 Sonnet, and LLaVA-1.6</b> on a benchmark of <b>500 ingredient lists</b>.
-          <b>Claude 3 Sonnet</b> achieved the highest <b>factual accuracy (91.3%)</b> and lowest <b>hallucination rate (4.2%)</b>.
-          OCR accuracy on <b>curved/glossy packaging</b> was the primary bottleneck across all models.`
+          content: `<b>5 models evaluated</b> on response time, extraction accuracy, and real-world usability:<br/><br/>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:12px 0 24px;align-items:end;">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <img src="Images/P03.5-Gemini.webp" alt="Gemini 2.0 Flash" style="width:70px;height:70px;object-fit:contain;display:block;"/>
+    <span style="font-size:13px;color:var(--charcoal);text-align:center;font-weight:500;line-height:1.3;">Gemini 2.0 Flash</span>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <img src="Images/P03.6-GPT_Vision.png" alt="GPT-4 Vision" style="width:70px;height:70px;object-fit:contain;display:block;"/>
+    <span style="font-size:13px;color:var(--charcoal);text-align:center;font-weight:500;line-height:1.3;">GPT-4 Vision</span>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <img src="Images/P03.4-Claude.png" alt="Claude 3 Sonnet" style="width:70px;height:70px;object-fit:contain;display:block;"/>
+    <span style="font-size:13px;color:var(--charcoal);text-align:center;font-weight:500;line-height:1.3;">Claude 3 Sonnet</span>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <img src="Images/P03.7-llava.png" alt="LLaVA 1.5" style="width:70px;height:70px;object-fit:contain;display:block;"/>
+    <span style="font-size:13px;color:var(--charcoal);text-align:center;font-weight:500;line-height:1.3;">LLaVA 1.5</span>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <img src="Images/P03.3-BLIP2.png" alt="BLIP-2" style="width:70px;height:70px;object-fit:contain;display:block;"/>
+    <span style="font-size:13px;color:var(--charcoal);text-align:center;font-weight:500;line-height:1.3;">BLIP-2</span>
+  </div>
+</div><br/>
+<img src="Images/P03.9-Table2.png" alt="Model Performance Comparison Table" style="width:100%;height:auto;border-radius:8px;display:block;margin:10px 0 6px;"/><br/>
+<p style="font-size:16px;color:var(--muted);text-align:center;margin-bottom:20px;">Performance comparison of 5 LLM models — response time, accuracy, and remarks</p>
+<b>Key findings from model evaluation:</b><br/>
+• <b>Gemini 2.0 Flash</b> — 2–5s, >90% accuracy — optimal balance of speed and reliability for multimodal tasks<br/>
+• <b>GPT-4 Vision</b> — 5–8s, ~95% accuracy — most accurate but prohibitively slow for real-time use<br/>
+• <b>Claude 3 Sonnet</b> — 4–6s, ~80% accuracy — sensitive to image clarity, inconsistent on low-res labels<br/>
+• <b>LLaVA 1.5</b> — 6–10s, ~65% accuracy — struggles with complex multi-ingredient texts<br/>
+• <b>BLIP-2</b> — 5–7s, ~75% accuracy — adequate for simple single-ingredient extractions only<br/><br/>
+<b>Decision:</b> <b>Gemini 2.0 Flash</b> selected as the production model — instant responses (&lt;5s) with >90% accuracy met the critical user need for speed during in-store shopping`
         },
         {
-          title: 'Technology Stack',
-          content: `<b>Frontend:</b> React Native · <b>Backend:</b> FastAPI (Python) · <b>LLM:</b> Claude API ·
-          <b>OCR:</b> Tesseract + GPT-4V fallback · <b>Database:</b> PostgreSQL + pgvector ·
-          <b>Deployment:</b> AWS Lambda + S3 · <b>Auth:</b> Auth0`
-        },
-        {
-          title: 'Data Flow Pipeline',
-          content: `<b>Image capture</b> → Pre-processing (contrast, rotation) → <b>OCR extraction</b> →
-          <b>Ingredient segmentation</b> → <b>LLM enrichment</b> per ingredient →
-          <b>Personalization filter</b> → Structured JSON response → <b>React Native rendering</b>`
+          title: 'Key Findings',
+          content: `<b>Across all three studies, four major findings emerged:</b><br/><br/>
+1. <b>AI can reliably extract ingredient data</b> — Gemini 2.0 Flash achieved 92.4% extraction accuracy and 89.7% information accuracy when verified against scientific literature, meeting the threshold for health-conscious consumer use<br/><br/>
+2. <b>Time savings are transformative</b> — the analyzer reduced research time from 7.3 minutes (manual) to 3.5 seconds per product, saving users 95% of their time — a change that makes in-store informed shopping genuinely feasible<br/><br/>
+3. <b>Usability is strong out of the box</b> — SUS score of 82.5 (Grade B) with 100% task completion indicates the Streamlit interface is intuitive across health literacy levels; all 12 participants successfully completed the task without training<br/><br/>
+4. <b>Speed beats peak accuracy for real-world use</b> — while GPT-4 Vision achieved ~95% accuracy, its 5–8s response was deemed impractical by users in shopping contexts; Gemini's >90% accuracy at 2–5s was the optimal real-world trade-off`
         }
       ]
     },
@@ -1489,6 +1634,97 @@
         {
           title: 'Technical Approach',
           content: 'Used <b>1D-CNN architecture</b> trained on a dataset of <b>3,200 spectra across 48 pigment classes</b>. Achieved <b>94.7% top-1 accuracy</b>. Integrated with a <b>React-based web interface</b> for use by <b>non-technical conservators</b>.'
+        }
+      ]
+    },
+    teachu: {
+      tag: 'AI · EdTech · Hackathon',
+      title: 'TeachU: Your Personal AI Tutor at Your Fingertips',
+      sections: [
+        {
+          title: 'Overview',
+          open: true,
+          content: `<img src="Images/P04.1-Proj_4_thumnail.jpg" alt="TeachU — Personal AI Tutor" style="width:100%;border-radius:10px;margin-bottom:20px;display:block;"/><div style="background:var(--warm-white);border-left:4px solid var(--rust);border-radius:8px;padding:16px 20px;margin-bottom:20px;"><span style="font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;">Project Vision</span><span style="font-size:16px;color:var(--charcoal);line-height:1.75;font-weight:300;">Can an <b>AI-powered tutoring system</b> transform any PDF into a <b>personalised video explanation</b> — delivered by a talking AI avatar — making quality education accessible to every student, everywhere?</span></div><br/>
+<b>What TeachU does:</b><br/>
+• Upload a <b>PDF</b> — TeachU indexes it and makes it instantly queryable<br/>
+• Ask a question → get a <b>text answer</b> or a full <b>AI video</b> with voice and a talking avatar<br/>
+• Every page is processed into <b>Q&A pairs by LLaMA-3</b>, embedded for semantic retrieval<br/>
+• Supports <b>multiple languages</b> via ElevenLabs TTS — students learn in their native tongue<br/>
+• Built at <b>TED AI San Francisco</b> by Team BOBCAT HACKERS · <a href="https://github.com/deysanjeeb/personalTutor" target="_blank" style="color:var(--rust);font-weight:600;">View on GitHub ↗</a><br/><br/>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 6px;"><div style="display:flex;flex-direction:column;"><img src="Images/P04.2-HackathonPaticipation_1.jpeg" alt="Team at TED AI San Francisco" style="width:100%;height:220px;object-fit:cover;border-radius:10px;display:block;"/><span style="display:block;font-size:14px;color:var(--muted);text-align:center;margin-top:6px;font-weight:300;">Team BOBCAT HACKERS at TED AI San Francisco</span></div><div style="display:flex;flex-direction:column;"><img src="Images/P04.3-HackathonParticipation.jpeg" alt="BobCat Hackers workspace" style="width:100%;height:220px;object-fit:cover;border-radius:10px;display:block;"/><span style="display:block;font-size:14px;color:var(--muted);text-align:center;margin-top:6px;font-weight:300;">Building TeachU during the hackathon</span></div></div><br/>`
+        },
+        {
+          title: 'Problem Space & Motivation',
+          content: `<b>Why Online Learning Needs a Rethink:</b><br/>
+• <b>Engaging Content</b> — most online learning is passive; students read or watch but rarely interact with material at their own pace<br/>
+• <b>Personalized Learning</b> — one-size-fits-all curricula fail students who learn differently or at different speeds<br/>
+• <b>Wide Subject Access</b> — quality tutoring for niche or advanced topics is scarce and expensive<br/>
+• <b>Accessibility</b> — non-native speakers and students with learning differences are underserved by existing platforms<br/><br/>
+<b>The Market Opportunity:</b><br/>
+• The global EdTech market is projected to grow from <b>$254.8B (2021)</b> to <b>$605.4B by 2027</b> — a 2.4× increase in 6 years<br/>
+• Despite massive growth, most platforms still rely on <b>pre-recorded lectures</b> and <b>static quizzes</b> with no adaptive capability<br/>
+• <b>Language remains the single biggest barrier</b> — over 1.5 billion students globally learn in a second or third language<br/>
+• There is a clear gap for tools that combine <b>personalised explanation</b>, <b>voice</b>, and <b>visual delivery</b> in one seamless experience<br/>`
+        },
+        {
+          title: 'System Architecture & Tech Stack',
+          content: `<b>Two response modes — Text or Video</b><br/>
+• <b>FastAPI</b> backend (Python) with a toggle per query: return a plain text summary, or generate a full avatar video<br/>
+• <b>React + Tailwind</b> frontend: PDF upload, chat interface, live status messages, markdown rendering<br/><br/>
+<b>Two document processing paths:</b><br/>
+• <b>Cloud path (Vectara)</b> — PDF sent directly to Vectara; it handles indexing and returns a generated summary on query<br/>
+• <b>Local path (ChromaDB)</b> — PDF pages extracted → LLaMA-3 generates Q&A pairs → embedded with Ollama → stored in ChromaDB<br/><br/>
+<b>Tech Stack:</b><br/>
+• <b>Groq + LLaMA-3 8B</b> — fast LLM inference for Q&A extraction and chat<br/>
+• <b>Ollama (mxbai-embed-large)</b> — local embeddings, no external API needed<br/>
+• <b>ChromaDB</b> — local persistent vector database<br/>
+• <b>Vectara</b> — cloud RAG with built-in generative summarisation<br/>
+• <b>Bright Data</b> — web scraping via proxies for live references<br/>
+• <b>ElevenLabs</b> — neural text-to-speech narration<br/>
+• <b>Infinity AI v2</b> — lip-synced avatar video from audio + image<br/>
+• <b>Supabase Storage</b> — hosts generated audio and avatar files<br/><br/>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:16px 0 6px;">
+<div style="background:var(--warm-white);border-radius:10px;padding:16px 12px 12px;text-align:center;border:1px solid #e8ddd5;display:flex;flex-direction:column;align-items:center;gap:8px;"><img src="Images/P04.4-Vectara" alt="Vectara" style="width:auto;height:36px;max-width:90px;object-fit:contain;display:block;"/><span style="font-size:12px;color:var(--muted);display:block;">Cloud RAG & Corpus</span></div>
+<div style="background:var(--warm-white);border-radius:10px;padding:16px 12px 12px;text-align:center;border:1px solid #e8ddd5;display:flex;flex-direction:column;align-items:center;gap:8px;"><img src="Images/P04.5-Brightdata" alt="Bright Data" style="width:auto;height:36px;max-width:90px;object-fit:contain;display:block;"/><span style="font-size:12px;color:var(--muted);display:block;">Live Web Scraping</span></div>
+<div style="background:var(--warm-white);border-radius:10px;padding:16px 12px 12px;text-align:center;border:1px solid #e8ddd5;display:flex;flex-direction:column;align-items:center;gap:8px;"><img src="Images/P04.6-Portkey" alt="Portkey" style="width:auto;height:36px;max-width:90px;object-fit:contain;display:block;"/><span style="font-size:12px;color:var(--muted);display:block;">LLM Gateway</span></div>
+<div style="background:var(--warm-white);border-radius:10px;padding:16px 12px 12px;text-align:center;border:1px solid #e8ddd5;display:flex;flex-direction:column;align-items:center;gap:8px;"><img src="Images/P04.7-ElevenLabs" alt="ElevenLabs" style="width:auto;height:36px;max-width:90px;object-fit:contain;display:block;"/><span style="font-size:12px;color:var(--muted);display:block;">Neural TTS</span></div>
+<div style="background:var(--warm-white);border-radius:10px;padding:16px 12px 12px;text-align:center;border:1px solid #e8ddd5;display:flex;flex-direction:column;align-items:center;gap:8px;"><img src="Images/P04.8-InfinityAI" alt="Infinity AI" style="width:auto;height:36px;max-width:90px;object-fit:contain;display:block;"/><span style="font-size:12px;color:var(--muted);display:block;">Talking Avatar Video</span></div>
+</div><br/>`
+        },
+        {
+          title: 'How It Works',
+          content: `<b>1. Upload a PDF</b><br/>
+• User picks a file in the chat UI → sent to the FastAPI backend<br/>
+• Backend pushes it to <b>Vectara</b> for cloud indexing<br/>
+• In parallel: each page → LLaMA-3 Q&A extraction → Ollama embeddings → stored in <b>ChromaDB</b><br/><br/>
+<b>2. Ask a question</b><br/>
+• User types a question and picks <b>Text</b> or <b>Video</b><br/>
+• Backend queries Vectara (top 20 results, ±3 sentence context) and gets a generated summary<br/><br/>
+<b>3a. Text mode</b><br/>
+• Summary rendered as <b>markdown</b> in the chat bubble — instant<br/><br/>
+<b>3b. Video mode</b><br/>
+• Summary → <b>ElevenLabs</b> → MP3 generated<br/>
+• MP3 uploaded to <b>Supabase Storage</b> for a public URL<br/>
+• <b>Infinity AI</b> renders a lip-synced avatar video<br/>
+• Backend polls every 10s → returns video URL when ready<br/><br/>
+<b>Engineering highlights:</b><br/>
+• <b>Dual vector DB</b> — Vectara for cloud RAG; ChromaDB as a local offline fallback<br/>
+• <b>Retry logic</b> — 3-attempt loop with regex fallback for robust JSON extraction from LLM output<br/>
+• <b>Rate limiting</b> — 15s sleep between PDF pages to stay within Groq API limits<br/>`
+        },
+        {
+          title: 'SDG Alignment & Future Scope',
+          content: `<b>Sustainability Goals Addressed:</b><br/>
+• <b>SDG 4 — Quality Education</b>: TeachU democratises access to personalised tutoring — any student with a PDF gets a clear, conversational explanation regardless of location, income, or native language<br/>
+• <b>SDG 9 — Industry, Innovation & Infrastructure</b>: Demonstrates a scalable AI infrastructure pattern combining local LLMs, cloud RAG, neural TTS, and avatar video generation in a single deployable pipeline<br/>
+• Aligned with the <b>UN 2030 Agenda for Sustainable Development</b> — addressing educational equity as a foundational global priority<br/><br/>
+<b>Future Roadmap:</b><br/>
+• <b>Teacher Content Studio</b> — Interface for educators to upload curricula and auto-generate video lessons for their class<br/>
+• <b>Short-Form Micro-Lessons</b> — 60-second Reels-style explainers for quick concept reviews between study sessions<br/>
+• <b>Multi-disciplinary Reasoning</b> — Cross-subject explanations: the physics of music, the chemistry in cooking<br/>
+• <b>Talk to Historical Figures</b> — Learn Newton's laws from Newton, evolution from Darwin, using voice-cloned avatar characters<br/>
+• <b>Full Multilingual Pipeline</b> — Extend ElevenLabs TTS across 30+ languages for true global accessibility<br/>
+• <b>Re-animate Loved Ones</b> — A longer-horizon vision to preserve knowledge and personal stories across generations<br/>`
         }
       ]
     }
@@ -1545,8 +1781,8 @@
       else if (trimmed.startsWith('•') && grouped) {
         const content = trimmed.slice(1).trim();
         html += `<div style="display:flex;align-items:baseline;gap:9px;padding:4px 0 4px 4px;">
-          <span style="color:${A.bar};font-size:18px;flex-shrink:0;margin-top:2px;">›</span>
-          <span style="font-size:18px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
+          <span style="color:${A.bar};font-size:16px;flex-shrink:0;margin-top:2px;">›</span>
+          <span style="font-size:16px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
       // Standalone bullet — card style, single accent
@@ -1555,7 +1791,7 @@
         const content = trimmed.slice(1).trim();
         html += `<div style="display:flex;align-items:flex-start;gap:10px;margin:7px 0;padding:10px 14px;background:${SA.bullet_bg};border-radius:8px;border-left:3px solid ${SA.bullet_border};">
           <span style="color:${SA.bar};font-size:20px;line-height:1.4;flex-shrink:0;">›</span>
-          <span style="font-size:18px;color:var(--charcoal);line-height:1.72;text-align:justify;font-weight:300;">${content}</span>
+          <span style="font-size:16px;color:var(--charcoal);line-height:1.72;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
       // Numbered lines — cycle accent
@@ -1565,12 +1801,12 @@
         const content = trimmed.replace(/^\d+\.\s*/, '');
         html += `<div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;padding:12px 16px;background:${NA.bullet_bg};border-radius:8px;border-left:3px solid ${NA.bullet_border};">
           <span style="background:${NA.num_bg};color:#fff;font-size:11px;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'Poppins',sans-serif;">${num}</span>
-          <span style="font-size:18px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
+          <span style="font-size:16px;color:var(--charcoal);line-height:1.75;text-align:justify;font-weight:300;">${content}</span>
         </div>`;
       }
       // Regular paragraph
       else {
-        html += `<p style="font-size:18px;color:var(--charcoal);line-height:1.85;margin-bottom:6px;text-align:justify;font-weight:300;">${trimmed}</p>`;
+        html += `<p style="font-size:16px;color:var(--charcoal);line-height:1.85;margin-bottom:6px;text-align:justify;font-weight:300;">${trimmed}</p>`;
       }
     });
     return html;
